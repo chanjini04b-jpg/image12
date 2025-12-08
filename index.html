@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 블로그 글쓰기 도우미</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 네이버 블로그 글쓰기 도우미</h1>
+            <p class="subtitle">효율적인 블로그 포스팅을 위한 최고의 도구</p>
+        </header>
+
+        <main>
+            <!-- 입력 폼 -->
+            <section class="input-section">
+                <h2>블로그 글 작성 시작하기</h2>
+                <form id="blogForm">
+                    <div class="form-group">
+                        <label for="mainKeyword">주제 키워드</label>
+                        <input type="text" id="mainKeyword" name="mainKeyword" placeholder="예: 아이폰17배경화면, 크리스마스" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemCount">생성할 항목 개수</label>
+                        <select id="itemCount" name="itemCount">
+                            <option value="6">6개</option>
+                            <option value="12" selected>12개</option>
+                            <option value="15">15개</option>
+                            <option value="20">20개</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">SEO 콘텐츠 생성</button>
+                        <button type="button" class="btn btn-secondary" id="copyBtn">전체 복사하기</button>
+                        <button type="button" class="btn btn-success" id="downloadWordBtn" style="display:none;">Word 파일 저장</button>
+                        <button type="reset" class="btn btn-outline">초기화</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- 미리보기 섹션 -->
+            <section class="preview-section" id="previewSection" style="display: none;">
+                <h2>생성된 SEO 콘텐츠</h2>
+                <div class="preview-content" id="generatedContent">
+                    <!-- 생성된 콘텐츠가 여기에 표시됩니다 -->
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>&copy; 2025 네이버 블로그 글쓰기 도우미. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx-js/0.3.1/html-docx.js"></script>
+</body>
+</html>
