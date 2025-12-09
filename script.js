@@ -125,6 +125,7 @@ function translateKeywordToEnglish(keyword) {
         '차': 'tea',
         '책': 'book',
         '음악': 'music',
+        '오르골': 'music box',
         '여행': 'travel',
         '우주': 'space',
         '별': 'star',
@@ -290,91 +291,91 @@ function generateThemesByKeyword(keyword) {
     // 아이폰 배경화면 관련
     if (lowerKeyword.includes('아이폰') || lowerKeyword.includes('iphone') || lowerKeyword.includes('배경화면') || lowerKeyword.includes('wallpaper')) {
         return [
-            { title: '🌅 수평선 너머로 가라앉는 황금빛 태양', desc: '수평선 너머로 천천히 가라앉는 태양이 하늘과 바다를 온통 황금빛으로 물들이는 장엄한 순간입니다. 붉은 오렌지에서 부드러운 핑크, 그리고 깊은 보라색으로 이어지는 그라데이션이 완벽한 조화를 이루며 하늘을 수놓습니다. 잔잔한 파도가 태양빛을 반사하며 반짝이고, 물결마다 금빛 물감을 흩뿌린 듯 영롱하게 빛납니다. 실루엣으로 보이는 야자수나 작은 섬이 풍경에 깊이를 더하고, 새들이 노을을 배경으로 날아가는 모습이 한 폭의 그림처럼 아름답습니다. 하루를 마무리하는 이 평화롭고 경이로운 자연의 선물은 보는 이의 마음을 차분하게 가라앉히며, 내일에 대한 희망과 감사의 마음을 일깨워줍니다. 매일 다른 색채로 우리를 놀라게 하는 자연의 예술 작품입니다.', ko: '골든 아워, 황혼 풍경. 수평선 위로 지는 석양의 장엄한 그라데이션, 오렌지에서 보라색으로 변하는 하늘, 금빛으로 반짝이는 바다 물결, 실루엣으로 보이는 야자수나 섬, 따뜻하고 평화로운 색조, 영롱한 빛의 반사', en: 'golden hour, twilight landscape. Majestic gradient of sunset over horizon, sky transitioning from orange to purple, ocean waves shimmering in golden light, silhouette of palm trees or island, warm and peaceful tones, ethereal light reflections, contemplative mood' },
-            { title: '🌆 빛으로 깨어나는 도시의 야경', desc: '해가 진 후 도시가 진정한 생명력을 발휘하며 수천 개의 불빛으로 깨어나는 화려한 야경입니다. 고층 빌딩들의 창문에서 쏟아지는 빛, 거리를 달리는 자동차들의 헤드라이트가 만들어내는 빛의 궤적, 그리고 네온사인들이 어우러져 도시를 거대한 빛의 캔버스로 만들어냅니다. 높은 곳에서 내려다본 도시는 마치 별들이 땅으로 내려와 펼쳐진 듯한 환상적인 풍경을 선사합니다. 강을 가로지르는 다리의 조명이 물에 반사되어 두 배의 아름다움을 만들고, 멀리 보이는 랜드마크 건물들이 도시의 스카이라인을 완성합니다. 잠들지 않는 도시의 에너지와 역동성, 그리고 수백만 사람들의 삶이 빛으로 표현되는 이 장면은 현대 도시의 매력을 완벽하게 담아낸 작품입니다.', ko: '도시 야경, 롱 익스포저. 고층 빌딩의 창문 조명이 만드는 빛의 패턴, 자동차 헤드라이트의 라이트 트레일, 네온사인의 생생한 색상, 강물에 반사되는 도시 불빛, 깊은 푸른 밤하늘과의 대비, 도시 스카이라인의 웅장함', en: 'urban night scene, long exposure. Light patterns from high-rise building windows, light trails from car headlights, vivid colors of neon signs, city lights reflecting on river, contrast with deep blue night sky, majestic city skyline, dynamic composition' },
+            { title: '수평선 너머로 가라앉는 황금빛 태양', desc: '수평선 너머로 천천히 가라앉는 태양이 하늘과 바다를 온통 황금빛으로 물들이는 장엄한 순간입니다. 붉은 오렌지에서 부드러운 핑크, 그리고 깊은 보라색으로 이어지는 그라데이션이 완벽한 조화를 이루며 하늘을 수놓습니다. 잔잔한 파도가 태양빛을 반사하며 반짝이고, 물결마다 금빛 물감을 흩뿌린 듯 영롱하게 빛납니다. 실루엣으로 보이는 야자수나 작은 섬이 풍경에 깊이를 더하고, 새들이 노을을 배경으로 날아가는 모습이 한 폭의 그림처럼 아름답습니다. 하루를 마무리하는 이 평화롭고 경이로운 자연의 선물은 보는 이의 마음을 차분하게 가라앉히며, 내일에 대한 희망과 감사의 마음을 일깨워줍니다. 매일 다른 색채로 우리를 놀라게 하는 자연의 예술 작품입니다.', ko: '골든 아워, 황혼 풍경. 수평선 위로 지는 석양의 장엄한 그라데이션, 오렌지에서 보라색으로 변하는 하늘, 금빛으로 반짝이는 바다 물결, 실루엣으로 보이는 야자수나 섬, 따뜻하고 평화로운 색조, 영롱한 빛의 반사', en: 'golden hour, twilight landscape. Majestic gradient of sunset over horizon, sky transitioning from orange to purple, ocean waves shimmering in golden light, silhouette of palm trees or island, warm and peaceful tones, ethereal light reflections, contemplative mood' },
+            { title: '빛으로 깨어나는 도시의 야경', desc: '해가 진 후 도시가 진정한 생명력을 발휘하며 수천 개의 불빛으로 깨어나는 화려한 야경입니다. 고층 빌딩들의 창문에서 쏟아지는 빛, 거리를 달리는 자동차들의 헤드라이트가 만들어내는 빛의 궤적, 그리고 네온사인들이 어우러져 도시를 거대한 빛의 캔버스로 만들어냅니다. 높은 곳에서 내려다본 도시는 마치 별들이 땅으로 내려와 펼쳐진 듯한 환상적인 풍경을 선사합니다. 강을 가로지르는 다리의 조명이 물에 반사되어 두 배의 아름다움을 만들고, 멀리 보이는 랜드마크 건물들이 도시의 스카이라인을 완성합니다. 잠들지 않는 도시의 에너지와 역동성, 그리고 수백만 사람들의 삶이 빛으로 표현되는 이 장면은 현대 도시의 매력을 완벽하게 담아낸 작품입니다.', ko: '도시 야경, 롱 익스포저. 고층 빌딩의 창문 조명이 만드는 빛의 패턴, 자동차 헤드라이트의 라이트 트레일, 네온사인의 생생한 색상, 강물에 반사되는 도시 불빛, 깊은 푸른 밤하늘과의 대비, 도시 스카이라인의 웅장함', en: 'urban night scene, long exposure. Light patterns from high-rise building windows, light trails from car headlights, vivid colors of neon signs, city lights reflecting on river, contrast with deep blue night sky, majestic city skyline, dynamic composition' },
             { title: '🌳 나무 사이로 들어오는 하얀 빛길', desc: '빽빽하게 들어선 나무들이 만들어내는 초록빛 터널 속으로 부드러운 햇살이 스며듭니다. 오래된 나무들의 울창한 가지들이 하늘을 가리고, 그 사이로 들어오는 빛줄기가 신비로운 분위기를 연출합니다. 이끼가 낀 나무 기둥, 고사리와 양치식물이 무성한 숲 바닥, 그리고 공기 중에 떠다니는 작은 먼지 입자들이 빛을 받아 반짝입니다. 새들의 지저귐과 나뭇잎이 바람에 스치는 소리만이 들리는 고요한 숲 속에서, 자연의 생명력이 온몸으로 느껴집니다. 나무들 사이로 보이는 멀리 숲 길, 이끼 낀 바위, 그리고 작은 시냇물이 흐르는 소리까지, 모든 요소가 조화롭게 어우러져 완벽한 자연의 안식처를 만들어냅니다. 도시의 소음에서 벗어나 진정한 평화를 느낄 수 있는 치유의 공간입니다.', ko: '숲 속 풍경, 자연광. 울창한 나무들 사이로 들어오는 빛줄기, 이끼 낀 나무 기둥의 질감, 고사리와 양치식물의 풍성한 녹음, 공기 중 먼지 입자가 만드는 빛의 산란, 깊은 초록색 톤의 그라데이션, 신비롭고 고요한 분위기', en: 'forest landscape, natural lighting. Rays of light streaming through dense trees, texture of moss-covered tree trunks, lush ferns and foliage, light scattering from airborne particles, gradient of deep green tones, mysterious and serene atmosphere, peaceful nature' },
-            { title: '⭐ 하늘을 가로지르는 은하수 별빛', desc: '칠흑 같은 밤하늘을 가로지르는 은하수의 찬란한 별빛이 우주의 신비를 고스란히 드러냅니다. 수백만 개의 별들이 빛의 강을 이루며 하늘을 가로지르고, 보라색과 파란색의 성운이 은은하게 빛나며 깊이감을 더합니다. 지상에서는 외로운 나무 한 그루나 산의 실루엣이 하늘과 대비를 이루며 장엄함을 더하고, 때때로 유성이 하늘을 가로지르며 소원을 빌 기회를 선사합니다. 광공해 없는 깨끗한 하늘에서만 볼 수 있는 이 우주쇼는 인간의 존재가 얼마나 작은지, 그러면서도 이 광대한 우주의 일부라는 사실이 얼마나 경이로운지 깨닫게 합니다. 별빛이 쏟아지는 밤하늘은 무한한 가능성과 꿈을 상징하며, 우리를 우주적 사색으로 이끕니다.', ko: '천체 사진, 밤하늘. 은하수의 밝은 별빛 띠가 가로지르는 하늘, 보라색과 파란색 성운의 섬세한 색감, 지상의 나무나 산 실루엣, 깊은 우주의 무한한 깊이감, 별들의 미세한 반짝임, 우주적이고 경이로운 분위기', en: 'astrophotography, night sky. Bright band of Milky Way crossing the sky, delicate colors of purple and blue nebulae, silhouette of tree or mountain on ground, infinite depth of deep space, subtle twinkling of stars, cosmic and awe-inspiring atmosphere, celestial wonder' },
-            { title: '🌸 부드러운 핑크와 라벤더 그라데이션', desc: '새벽이나 황혼 무렵, 하늘이 부드러운 파스텔 색조로 물드는 꿈결같은 순간입니다. 연한 핑크, 라벤더, 피치, 그리고 민트색이 수채화 물감처럼 번져가며 하늘을 캔버스 삼아 추상화를 그립니다. 구름 한 점 없이 맑은 하늘이나, 솜사탕처럼 부드러운 구름이 떠다니며 색채의 조화를 더욱 풍부하게 만듭니다. 이 평화롭고 온화한 색감은 마음을 차분하게 하고 감성을 자극하며, SNS에서 가장 사랑받는 감성적인 배경이 됩니다. 하루의 시작이나 끝을 알리는 이 마법 같은 시간대는 잠깐 동안만 지속되지만, 그 순간의 아름다움은 영원히 기억에 남습니다. 자연이 선사하는 가장 부드럽고 로맨틱한 팔레트로, 보는 이의 감성을 깊이 울립니다.', ko: '소프트 그라데이션, 미니멀리즘. 연한 핑크, 라벤더, 피치 색상의 부드러운 하늘 그라데이션, 솜사탕 같은 구름의 섬세한 질감, 수채화 같은 색의 번짐 효과, 평화롭고 감성적인 톤, 깨끗하고 심플한 구성', en: 'soft gradient, minimalism. Gentle sky gradient in pale pink, lavender, and peach, delicate texture of cotton candy clouds, watercolor-like color bleeding effect, peaceful and emotional tones, clean and simple composition, dreamy aesthetic' },
-            { title: '🔸 정교하게 겹쳐진 도형의 조화', desc: '정교하게 계산된 선과 도형들이 만들어내는 현대적이고 세련된 추상 패턴입니다. 삼각형, 육각형, 원 등 기본 도형들이 반복되고 겹치며 복잡하면서도 조화로운 디자인을 완성합니다. 단색이나 그라데이션, 또는 대비되는 색상들이 패턴에 깊이와 역동성을 부여하고, 3D 효과를 내는 음영 처리가 평면에 입체감을 더합니다. 미니멀하면서도 강렬한 이 디자인은 현대 디지털 아트의 정수를 보여주며, 깔끔하고 전문적인 느낌을 선사합니다. 대칭성과 비대칭성이 공존하는 이 패턴은 수학적 아름다움과 예술적 감각이 완벽하게 조화를 이루며, 보면 볼수록 새로운 디테일을 발견하게 되는 지적이고 세련된 배경입니다.', ko: '기하학적 추상, 미니멀 디자인. 정교한 선과 도형의 반복 패턴, 삼각형, 육각형, 원의 조화로운 배치, 그라데이션 또는 대비 색상, 3D 효과를 주는 음영 처리, 현대적이고 세련된 구성, 수학적 정밀함', en: 'geometric abstract, minimal design. Precise repeating patterns of lines and shapes, harmonious arrangement of triangles, hexagons, circles, gradient or contrasting colors, shading for 3D effect, modern and sophisticated composition, mathematical precision, clean aesthetic' },
+            { title: '하늘을 가로지르는 은하수 별빛', desc: '칠흑 같은 밤하늘을 가로지르는 은하수의 찬란한 별빛이 우주의 신비를 고스란히 드러냅니다. 수백만 개의 별들이 빛의 강을 이루며 하늘을 가로지르고, 보라색과 파란색의 성운이 은은하게 빛나며 깊이감을 더합니다. 지상에서는 외로운 나무 한 그루나 산의 실루엣이 하늘과 대비를 이루며 장엄함을 더하고, 때때로 유성이 하늘을 가로지르며 소원을 빌 기회를 선사합니다. 광공해 없는 깨끗한 하늘에서만 볼 수 있는 이 우주쇼는 인간의 존재가 얼마나 작은지, 그러면서도 이 광대한 우주의 일부라는 사실이 얼마나 경이로운지 깨닫게 합니다. 별빛이 쏟아지는 밤하늘은 무한한 가능성과 꿈을 상징하며, 우리를 우주적 사색으로 이끕니다.', ko: '천체 사진, 밤하늘. 은하수의 밝은 별빛 띠가 가로지르는 하늘, 보라색과 파란색 성운의 섬세한 색감, 지상의 나무나 산 실루엣, 깊은 우주의 무한한 깊이감, 별들의 미세한 반짝임, 우주적이고 경이로운 분위기', en: 'astrophotography, night sky. Bright band of Milky Way crossing the sky, delicate colors of purple and blue nebulae, silhouette of tree or mountain on ground, infinite depth of deep space, subtle twinkling of stars, cosmic and awe-inspiring atmosphere, celestial wonder' },
+            { title: '부드러운 핑크와 라벤더 그라데이션', desc: '새벽이나 황혼 무렵, 하늘이 부드러운 파스텔 색조로 물드는 꿈결같은 순간입니다. 연한 핑크, 라벤더, 피치, 그리고 민트색이 수채화 물감처럼 번져가며 하늘을 캔버스 삼아 추상화를 그립니다. 구름 한 점 없이 맑은 하늘이나, 솜사탕처럼 부드러운 구름이 떠다니며 색채의 조화를 더욱 풍부하게 만듭니다. 이 평화롭고 온화한 색감은 마음을 차분하게 하고 감성을 자극하며, SNS에서 가장 사랑받는 감성적인 배경이 됩니다. 하루의 시작이나 끝을 알리는 이 마법 같은 시간대는 잠깐 동안만 지속되지만, 그 순간의 아름다움은 영원히 기억에 남습니다. 자연이 선사하는 가장 부드럽고 로맨틱한 팔레트로, 보는 이의 감성을 깊이 울립니다.', ko: '소프트 그라데이션, 미니멀리즘. 연한 핑크, 라벤더, 피치 색상의 부드러운 하늘 그라데이션, 솜사탕 같은 구름의 섬세한 질감, 수채화 같은 색의 번짐 효과, 평화롭고 감성적인 톤, 깨끗하고 심플한 구성', en: 'soft gradient, minimalism. Gentle sky gradient in pale pink, lavender, and peach, delicate texture of cotton candy clouds, watercolor-like color bleeding effect, peaceful and emotional tones, clean and simple composition, dreamy aesthetic' },
+            { title: '정교하게 겹쳐진 도형의 조화', desc: '정교하게 계산된 선과 도형들이 만들어내는 현대적이고 세련된 추상 패턴입니다. 삼각형, 육각형, 원 등 기본 도형들이 반복되고 겹치며 복잡하면서도 조화로운 디자인을 완성합니다. 단색이나 그라데이션, 또는 대비되는 색상들이 패턴에 깊이와 역동성을 부여하고, 3D 효과를 내는 음영 처리가 평면에 입체감을 더합니다. 미니멀하면서도 강렬한 이 디자인은 현대 디지털 아트의 정수를 보여주며, 깔끔하고 전문적인 느낌을 선사합니다. 대칭성과 비대칭성이 공존하는 이 패턴은 수학적 아름다움과 예술적 감각이 완벽하게 조화를 이루며, 보면 볼수록 새로운 디테일을 발견하게 되는 지적이고 세련된 배경입니다.', ko: '기하학적 추상, 미니멀 디자인. 정교한 선과 도형의 반복 패턴, 삼각형, 육각형, 원의 조화로운 배치, 그라데이션 또는 대비 색상, 3D 효과를 주는 음영 처리, 현대적이고 세련된 구성, 수학적 정밀함', en: 'geometric abstract, minimal design. Precise repeating patterns of lines and shapes, harmonious arrangement of triangles, hexagons, circles, gradient or contrasting colors, shading for 3D effect, modern and sophisticated composition, mathematical precision, clean aesthetic' },
             { title: '🌴 터콰이즈 바다와 야자수 그늘', desc: '크리스탈처럼 맑은 터콰이즈 빛 바닷물이 새하얀 모래사장과 만나는 천국 같은 해변 풍경입니다. 야자수가 바람에 부드럽게 흔들리고, 그 그늘 아래 햇빛이 모래에 무늬를 그립니다. 투명한 바닷물을 통해 산호초와 열대어들이 선명하게 보이고, 파도가 해변에 닿을 때마다 하얀 거품을 일으키며 속삭입니다. 수평선 너머로 펼쳐진 끝없는 푸른 바다와 하늘이 만나는 곳, 가끔 보이는 작은 섬이나 요트가 이국적인 느낌을 더합니다. 따뜻한 태양, 시원한 바닷바람, 그리고 야자수 잎이 부딪히는 소리가 완벽한 휴식을 약속하는 이곳은 일상에서 벗어나 꿈꾸는 휴가지의 모든 것을 담고 있습니다. 보기만 해도 힐링이 되는 완벽한 낙원의 모습입니다.', ko: '트로피컬 비치, 선명한 색상. 크리스탈처럼 맑은 터콰이즈 바다, 새하얀 모래사장의 섬세한 질감, 야자수 그늘이 만드는 패턴, 투명한 물 속 산호초, 햇빛의 밝고 생생한 반사, 열대의 생동감 넘치는 분위기', en: 'tropical beach, vivid colors. Crystal-clear turquoise ocean, delicate texture of white sand beach, patterns created by palm tree shadows, coral reefs visible through transparent water, bright and vivid sunlight reflections, vibrant tropical atmosphere, paradise scene' },
-            { title: '🎨 자유롭게 흐르는 색채의 향연', desc: '형태에 구애받지 않고 자유롭게 흐르는 색채들이 만들어내는 순수 예술적 표현입니다. 물감이 물 위에서 번지듯, 오일과 물이 섞이며 만들어내는 마블 패턴처럼, 예측 불가능하고 독특한 색의 조합이 탄생합니다. 대담한 원색부터 부드러운 중간색까지, 다양한 색상들이 충돌하고 융합하며 역동적인 에너지를 발산합니다. 번지기, 그라데이션, 텍스처의 변화가 끊임없이 이어지며 보는 이의 상상력을 자극하고, 각자 다른 의미와 감정을 투영할 수 있는 여백을 제공합니다. 어떤 구체적인 형태도 보이지 않지만, 그 자체로 완벽한 조화와 균형을 이루는 이 추상적 색감은 현대 미술의 자유로움과 창의성을 대변하며, 독창적이고 예술적인 배경을 원하는 이들에게 완벽한 선택입니다.', ko: '추상 예술, 유동적 형태. 자유롭게 흐르고 번지는 색채, 물감이 섞이는 마블 패턴, 원색과 중간색의 대담한 조합, 그라데이션과 텍스처 변화, 예측 불가능한 유기적 형태, 역동적이고 감각적인 구성', en: 'abstract art, fluid forms. Freely flowing and bleeding colors, marble patterns of mixing paints, bold combination of primary and intermediate colors, gradient and texture variations, unpredictable organic shapes, dynamic and sensual composition, artistic expression' },
-            { title: '◽️ 흑백의 절제된 아름다움', desc: '불필요한 모든 요소를 제거하고 본질만 남긴 극도로 절제된 아름다움입니다. 검은색과 흰색, 또는 회색 톤만을 사용하여 깊이와 대비를 만들어내고, 간결한 선과 면으로 강력한 시각적 임팩트를 전달합니다. 텅 빈 공간이 오히려 강조점이 되고, 단 하나의 요소가 전체 화면을 지배하는 이 미니멀리즘 철학은 적을수록 더 많다는 디자인의 진리를 증명합니다. 잡음 없는 깨끗함, 군더더기 없는 명확함, 그리고 세련된 단순함이 주는 고급스러움은 시대를 초월한 클래식한 매력을 발산합니다. 무채색이 주는 차분함과 집중력, 그리고 어떤 색상과도 조화를 이루는 범용성은 이 배경을 가장 실용적이면서도 스타일리시한 선택으로 만듭니다.', ko: '미니멀리즘, 모노크롬. 흑백 또는 회색조의 절제된 색상, 간결한 기하학적 형태, 텅 빈 여백의 활용, 섬세한 명암 대비, 깨끗하고 정돈된 구성, 현대적이고 세련된 감각, 차분한 분위기', en: 'minimalism, monochrome. Restrained black, white, or grayscale palette, clean geometric forms, utilization of empty space, subtle contrast of light and shadow, clean and organized composition, modern and sophisticated sense, calm atmosphere, timeless elegance' },
+            { title: '자유롭게 흐르는 색채의 향연', desc: '형태에 구애받지 않고 자유롭게 흐르는 색채들이 만들어내는 순수 예술적 표현입니다. 물감이 물 위에서 번지듯, 오일과 물이 섞이며 만들어내는 마블 패턴처럼, 예측 불가능하고 독특한 색의 조합이 탄생합니다. 대담한 원색부터 부드러운 중간색까지, 다양한 색상들이 충돌하고 융합하며 역동적인 에너지를 발산합니다. 번지기, 그라데이션, 텍스처의 변화가 끊임없이 이어지며 보는 이의 상상력을 자극하고, 각자 다른 의미와 감정을 투영할 수 있는 여백을 제공합니다. 어떤 구체적인 형태도 보이지 않지만, 그 자체로 완벽한 조화와 균형을 이루는 이 추상적 색감은 현대 미술의 자유로움과 창의성을 대변하며, 독창적이고 예술적인 배경을 원하는 이들에게 완벽한 선택입니다.', ko: '추상 예술, 유동적 형태. 자유롭게 흐르고 번지는 색채, 물감이 섞이는 마블 패턴, 원색과 중간색의 대담한 조합, 그라데이션과 텍스처 변화, 예측 불가능한 유기적 형태, 역동적이고 감각적인 구성', en: 'abstract art, fluid forms. Freely flowing and bleeding colors, marble patterns of mixing paints, bold combination of primary and intermediate colors, gradient and texture variations, unpredictable organic shapes, dynamic and sensual composition, artistic expression' },
+            { title: '흑백의 절제된 아름다움', desc: '불필요한 모든 요소를 제거하고 본질만 남긴 극도로 절제된 아름다움입니다. 검은색과 흰색, 또는 회색 톤만을 사용하여 깊이와 대비를 만들어내고, 간결한 선과 면으로 강력한 시각적 임팩트를 전달합니다. 텅 빈 공간이 오히려 강조점이 되고, 단 하나의 요소가 전체 화면을 지배하는 이 미니멀리즘 철학은 적을수록 더 많다는 디자인의 진리를 증명합니다. 잡음 없는 깨끗함, 군더더기 없는 명확함, 그리고 세련된 단순함이 주는 고급스러움은 시대를 초월한 클래식한 매력을 발산합니다. 무채색이 주는 차분함과 집중력, 그리고 어떤 색상과도 조화를 이루는 범용성은 이 배경을 가장 실용적이면서도 스타일리시한 선택으로 만듭니다.', ko: '미니멀리즘, 모노크롬. 흑백 또는 회색조의 절제된 색상, 간결한 기하학적 형태, 텅 빈 여백의 활용, 섬세한 명암 대비, 깨끗하고 정돈된 구성, 현대적이고 세련된 감각, 차분한 분위기', en: 'minimalism, monochrome. Restrained black, white, or grayscale palette, clean geometric forms, utilization of empty space, subtle contrast of light and shadow, clean and organized composition, modern and sophisticated sense, calm atmosphere, timeless elegance' },
             { title: '🌺 이슬 맺힌 꽃잎과 나비의 춤', desc: '형형색색의 꽃들이 만발한 들판이 마치 자연이 펼쳐놓은 거대한 캔버스처럼 눈앞에 펼쳐집니다. 튤립, 해바라기, 장미, 라벤더 등 각양각색의 꽃들이 저마다의 색깔로 피어나 무지개 같은 풍경을 만들어냅니다. 미풍에 살랑이는 꽃잎들, 꽃 사이를 날아다니는 나비와 벌들, 그리고 공기 중에 떠도는 달콤한 꽃향기까지 상상되는 완벽한 봄날의 풍경입니다. 가까이서 보면 이슬 맺힌 꽃잎의 섬세한 질감과 꽃술의 디테일이 보이고, 멀리서 보면 꽃들이 만들어내는 색의 물결이 장관을 이룹니다. 생명력 넘치고 활기찬 이 자연의 선물은 보는 이에게 즉각적인 행복감과 긍정적인 에너지를 전달하며, 사계절 중 가장 아름다운 봄의 정수를 완벽하게 포착한 작품입니다.', ko: '꽃밭 풍경, 매크로와 광각의 조화. 만발한 형형색색 꽃들의 생생한 색상, 꽃잎의 섬세한 질감과 이슬, 나비와 벌의 디테일, 미풍에 흔들리는 꽃들의 움직임, 밝고 따뜻한 자연광, 봄의 생명력 넘치는 분위기', en: 'flower field, macro and wide-angle harmony. Vivid colors of blooming flowers in full array, delicate texture and dew on petals, details of butterflies and bees, movement of flowers swaying in breeze, bright and warm natural light, vibrant spring atmosphere, joyful nature' },
-            { title: '💧 유리창에 맺힌 보석 같은 물방울', desc: '창문이나 유리에 맺힌 빗방울들이 도시의 불빛을 받아 보석처럼 반짝이는 로맨틱한 장면입니다. 각각의 물방울 속에는 뒤틀린 도시 풍경이 렌즈 효과로 담겨있고, 불빛이 물방울을 통과하며 만들어내는 보케 효과가 환상적인 분위기를 연출합니다. 빗방울이 유리를 타고 흘러내리며 만드는 자연스러운 궤적, 물방울끼리 합쳐지고 분리되는 역동적인 움직임, 그리고 비에 젖은 도시의 흐릿한 배경이 어우러져 감성적인 우울함과 낭만이 공존하는 독특한 정서를 자아냅니다. 비 오는 날의 고요함과 사색, 실내의 포근함과 안전함, 그리고 빗소리가 주는 ASMR 같은 위안이 시각적으로 표현된 이 장면은 감성적인 이들에게 특별히 사랑받는 배경입니다.', ko: '빗방울 매크로, 보케 효과. 유리창에 맺힌 빗방울의 극사실적 클로즈업, 물방울 속 왜곡된 도시 불빛, 보케로 흐려진 배경의 색상 번짐, 빗방울이 흘러내리는 궤적, 반사와 굴절의 빛 효과, 감성적이고 로맨틱한 분위기', en: 'raindrop macro, bokeh effect. Ultra-realistic close-up of raindrops on glass, distorted city lights within water droplets, color blur in bokeh background, trails of raindrops flowing down, light effects of reflection and refraction, emotional and romantic atmosphere, contemplative mood' },
-            { title: '🌌 소용돌이치는 보라빛 가스 구름', desc: '수십억 광년 떨어진 우주 공간에서 빛나는 거대한 성운의 경이로운 모습입니다. 보라색, 분홍색, 파란색, 그리고 주황색의 가스 구름들이 소용돌이치며 환상적인 색채의 향연을 펼칩니다. 별들이 탄생하는 우주의 요람인 이곳에서는 새로운 별들이 밝게 빛나며 주변 가스를 밝히고, 먼 은하들이 배경에 점점이 흩어져 있습니다. NASA의 허블 망원경이나 제임스 웹 망원경이 포착한 실제 우주 이미지에서 영감을 받은 이 장면은 인간의 상상을 초월하는 우주의 광대함과 아름다움을 보여줍니다. 추상적이면서도 실재하는, 환상적이면서도 과학적인 이 우주적 스케일의 예술 작품은 우리를 무한한 우주로 초대하며 경외감과 호기심을 불러일으킵니다.', ko: '우주 성운, 천체 사진. 소용돌이치는 보라색, 분홍색, 파란색 가스 구름, 밝게 빛나는 별들의 탄생, 먼 은하들의 미세한 점들, 우주 먼지의 섬세한 텍스처, 깊고 무한한 우주 공간, 경이롭고 신비로운 색감', en: 'cosmic nebula, astrophotography. Swirling purple, pink, blue gas clouds, bright birth of new stars, tiny dots of distant galaxies, delicate texture of cosmic dust, deep and infinite space, awe-inspiring and mysterious colors, celestial wonder, cosmic scale' }
+            { title: '유리창에 맺힌 보석 같은 물방울', desc: '창문이나 유리에 맺힌 빗방울들이 도시의 불빛을 받아 보석처럼 반짝이는 로맨틱한 장면입니다. 각각의 물방울 속에는 뒤틀린 도시 풍경이 렌즈 효과로 담겨있고, 불빛이 물방울을 통과하며 만들어내는 보케 효과가 환상적인 분위기를 연출합니다. 빗방울이 유리를 타고 흘러내리며 만드는 자연스러운 궤적, 물방울끼리 합쳐지고 분리되는 역동적인 움직임, 그리고 비에 젖은 도시의 흐릿한 배경이 어우러져 감성적인 우울함과 낭만이 공존하는 독특한 정서를 자아냅니다. 비 오는 날의 고요함과 사색, 실내의 포근함과 안전함, 그리고 빗소리가 주는 ASMR 같은 위안이 시각적으로 표현된 이 장면은 감성적인 이들에게 특별히 사랑받는 배경입니다.', ko: '빗방울 매크로, 보케 효과. 유리창에 맺힌 빗방울의 극사실적 클로즈업, 물방울 속 왜곡된 도시 불빛, 보케로 흐려진 배경의 색상 번짐, 빗방울이 흘러내리는 궤적, 반사와 굴절의 빛 효과, 감성적이고 로맨틱한 분위기', en: 'raindrop macro, bokeh effect. Ultra-realistic close-up of raindrops on glass, distorted city lights within water droplets, color blur in bokeh background, trails of raindrops flowing down, light effects of reflection and refraction, emotional and romantic atmosphere, contemplative mood' },
+            { title: '소용돌이치는 보라빛 가스 구름', desc: '수십억 광년 떨어진 우주 공간에서 빛나는 거대한 성운의 경이로운 모습입니다. 보라색, 분홍색, 파란색, 그리고 주황색의 가스 구름들이 소용돌이치며 환상적인 색채의 향연을 펼칩니다. 별들이 탄생하는 우주의 요람인 이곳에서는 새로운 별들이 밝게 빛나며 주변 가스를 밝히고, 먼 은하들이 배경에 점점이 흩어져 있습니다. NASA의 허블 망원경이나 제임스 웹 망원경이 포착한 실제 우주 이미지에서 영감을 받은 이 장면은 인간의 상상을 초월하는 우주의 광대함과 아름다움을 보여줍니다. 추상적이면서도 실재하는, 환상적이면서도 과학적인 이 우주적 스케일의 예술 작품은 우리를 무한한 우주로 초대하며 경외감과 호기심을 불러일으킵니다.', ko: '우주 성운, 천체 사진. 소용돌이치는 보라색, 분홍색, 파란색 가스 구름, 밝게 빛나는 별들의 탄생, 먼 은하들의 미세한 점들, 우주 먼지의 섬세한 텍스처, 깊고 무한한 우주 공간, 경이롭고 신비로운 색감', en: 'cosmic nebula, astrophotography. Swirling purple, pink, blue gas clouds, bright birth of new stars, tiny dots of distant galaxies, delicate texture of cosmic dust, deep and infinite space, awe-inspiring and mysterious colors, celestial wonder, cosmic scale' }
         ];
     }
     
     // 기본 테마 (다른 키워드들)
     return [
         { 
-            title: `${keyword} 감성적 표현`, 
+            title: `부드러운 조명과 따뜻한 색조의 감성적 표현`, 
             desc: `${keyword}를 따뜻하고 서정적인 감성으로 표현한 작품입니다. 부드러운 색감과 은은한 빛이 어우러져 마음을 편안하게 만들고, 감정을 자극하는 섬세한 디테일이 돋보입니다. 일상 속 소소한 행복과 위로를 시각적으로 담아내며, 보는 이의 마음에 따뜻한 온기를 전합니다.`, 
             ko: `${keyword}, 감성적 표현, emotional photography, 부드러운 조명, 따뜻한 색조, 서정적 분위기, 감정적 깊이`, 
             en: `emotional expression, soft lighting, warm color tone, lyrical atmosphere, sentimental mood, heartfelt composition, touching visual` 
         },
         { 
-            title: `${keyword} 빈티지 감성`, 
+            title: `필름 그레인과 바랜 색감의 레트로 스타일`, 
             desc: `${keyword}를 레트로하고 향수 어린 빈티지 스타일로 재해석했습니다. 세월의 흔적이 느껴지는 색감과 필름 카메라 특유의 그레인 효과가 과거로의 여행을 떠나게 합니다. 아날로그 시대의 따뜻함과 낭만이 가득한 작품으로, 시간을 거슬러 올라간 듯한 특별한 감동을 선사합니다.`, 
             ko: `${keyword}, 빈티지 스타일, retro aesthetic, 필름 그레인, 바랜 색감, 아날로그 감성, 노스탤지어`, 
             en: `vintage style, retro aesthetic, film grain, faded colors, analog feel, nostalgic atmosphere, timeworn beauty` 
         },
         { 
-            title: `${keyword} 미니멀리즘`, 
+            title: `여백의 미와 절제된 색상의 미니멀 구성`, 
             desc: `${keyword}를 극도로 절제된 미니멀리즘으로 표현했습니다. 불필요한 요소를 모두 제거하고 본질만 남겨, 강렬하면서도 깔끔한 인상을 만들어냅니다. 여백의 미와 단순한 구성이 현대적이고 세련된 감각을 자아내며, 시각적 휴식을 선사합니다.`, 
             ko: `${keyword}, 미니멀리즘, minimalist design, 여백의 미, 절제된 색상, 깔끔한 구성, 단순미`, 
             en: `minimalism, clean composition, negative space, restrained palette, simple beauty, modern aesthetic, uncluttered design` 
         },
         { 
-            title: `${keyword} 아방가르드`, 
+            title: `실험적 구성과 파격적 디자인의 전위 예술`, 
             desc: `${keyword}를 실험적이고 전위적인 아방가르드 기법으로 표현한 파격적인 작품입니다. 기존의 틀을 깨는 대담한 시도와 예상치 못한 조합이 충격과 감동을 동시에 선사합니다. 예술적 혁신과 창의성이 빛나는 독창적인 비주얼로, 새로운 시각적 경험을 제공합니다.`, 
             ko: `${keyword}, 아방가르드, avant-garde, 실험적 구성, 전위적 표현, 파격적 디자인, 혁신적 스타일`, 
             en: `avant-garde, experimental composition, radical expression, innovative design, cutting-edge visual, artistic revolution, bold creativity` 
         },
         { 
-            title: `${keyword} 초현실주의`, 
+            title: `환상적 구성과 꿈같은 분위기의 초현실 세계`, 
             desc: `${keyword}를 꿈과 현실의 경계를 넘나드는 초현실적 방식으로 표현했습니다. 환상적이고 비현실적인 장면 구성이 상상력을 자극하며, 일상에서는 볼 수 없는 신비로운 세계로 안내합니다. 무의식의 세계를 시각화한 몽환적이고 예술적인 작품입니다.`, 
             ko: `${keyword}, 초현실주의, surrealism, 환상적 구성, 꿈같은 분위기, 비현실적 장면, 신비로운 느낌`, 
             en: `surrealism, dreamlike composition, fantastic atmosphere, surreal scene, mystical feeling, subconscious visualization, otherworldly beauty` 
         },
         { 
-            title: `${keyword} 추상 표현주의`, 
+            title: `자유로운 붓질과 역동적 색채의 추상 표현`, 
             desc: `${keyword}를 순수한 색과 형태의 추상 표현으로 재해석했습니다. 구체적인 형상을 넘어 감정과 에너지를 직관적으로 전달하며, 자유로운 붓 터치와 역동적인 색채가 강렬한 인상을 남깁니다. 보는 이마다 다르게 해석할 수 있는 예술적 깊이가 있는 작품입니다.`, 
             ko: `${keyword}, 추상 표현주의, abstract expressionism, 자유로운 붓질, 역동적 색채, 감정 표현, 직관적 구성`, 
             en: `abstract expressionism, free brushwork, dynamic colors, emotional expression, intuitive composition, pure abstraction, gestural painting` 
         },
         { 
-            title: `${keyword} 팝아트 스타일`, 
+            title: `강렬한 원색과 반복 패턴의 대중적 아이콘`, 
             desc: `${keyword}를 대중문화의 아이콘으로 재탄생시킨 팝아트 스타일입니다. 강렬한 원색과 대담한 그래픽, 그리고 반복적인 패턴이 현대적이고 트렌디한 느낌을 줍니다. 유쾌하고 경쾌한 분위기로 일상에 활력을 더하는 작품입니다.`, 
             ko: `${keyword}, 팝아트, pop art style, 강렬한 원색, 그래픽 디자인, 대중적 아이콘, 반복 패턴`, 
             en: `pop art style, bold primary colors, graphic design, mass culture icon, repetitive pattern, vibrant aesthetic, contemporary art` 
         },
         { 
-            title: `${keyword} 인상주의`, 
+            title: `빛의 표현과 부드러운 붓터치의 순간 포착`, 
             desc: `${keyword}를 빛과 색채의 순간적 인상을 포착한 인상주의 기법으로 표현했습니다. 부드럽게 번지는 색감과 자연스러운 붓 터치가 시간의 흐름과 빛의 변화를 섬세하게 담아냅니다. 자연스럽고 서정적인 분위기가 감성을 자극하는 작품입니다.`, 
             ko: `${keyword}, 인상주의, impressionism, 빛의 표현, 부드러운 붓터치, 자연스러운 색감, 순간 포착`, 
             en: `impressionism, light expression, soft brushstrokes, natural color palette, moment captured, atmospheric effect, painterly quality` 
         },
         { 
-            title: `${keyword} 하이퍼리얼리즘`, 
+            title: `초사실적 디테일과 완벽한 질감의 극사실 표현`, 
             desc: `${keyword}를 사진보다 더 사실적으로 표현한 하이퍼리얼리즘 작품입니다. 극도로 정밀한 디테일과 완벽한 질감 표현이 실재보다 더 실재 같은 느낌을 줍니다. 모든 요소가 생생하게 살아있는 듯한 초사실적 비주얼로 감탄을 자아냅니다.`, 
             ko: `${keyword}, 하이퍼리얼리즘, hyperrealism, 초사실적 표현, 극사실 디테일, 완벽한 질감, 사진적 정밀도`, 
             en: `hyperrealism, ultra-realistic expression, extreme detail, perfect texture, photographic precision, lifelike quality, meticulous rendering` 
         },
         { 
-            title: `${keyword} 낭만주의`, 
+            title: `드라마틱한 조명과 풍부한 색채의 서사적 구성`, 
             desc: `${keyword}를 감정과 상상력을 극대화한 낭만주의 스타일로 표현했습니다. 드라마틱한 빛과 그림자, 풍부한 색채가 감동적인 장면을 연출하며, 자연의 숭고함과 인간의 감정을 극적으로 담아냅니다. 서사적이고 감성적인 분위기가 마음을 울립니다.`, 
             ko: `${keyword}, 낭만주의, romanticism, 드라마틱한 조명, 감정 극대화, 풍부한 색채, 서사적 구성`, 
             en: `romanticism, dramatic lighting, emotional intensity, rich colors, epic composition, sublime nature, passionate expression` 
         },
         { 
-            title: `${keyword} 입체파`, 
+            title: `다시점 구성과 기하학적 분해의 입체적 재구성`, 
             desc: `${keyword}를 다양한 시점에서 본 모습을 한 화면에 담은 입체파 스타일입니다. 기하학적 형태의 분해와 재구성이 새로운 시각적 경험을 선사하며, 평면 속에 입체감과 다차원적 깊이를 부여합니다. 혁신적이고 지적인 예술적 접근이 돋보이는 작품입니다.`, 
             ko: `${keyword}, 입체파, cubism, 다시점 구성, 기하학적 분해, 재구성, 다차원적 표현`, 
             en: `cubism, multiple viewpoints, geometric deconstruction, reconstruction, multidimensional expression, analytical composition, fragmented forms` 
         },
         { 
-            title: `${keyword} 표현주의`, 
+            title: `과장된 형태와 격렬한 색채의 주관적 감정 표현`, 
             desc: `${keyword}를 주관적 감정과 내면의 세계를 강렬하게 표현한 표현주의 작품입니다. 과장되고 왜곡된 형태, 격렬한 색채가 내면의 감정을 직접적으로 전달하며, 객관적 재현보다 주관적 감정에 집중합니다. 감정의 순수성이 극대화된 강렬한 비주얼입니다.`, 
             ko: `${keyword}, 표현주의, expressionism, 감정 강조, 과장된 형태, 격렬한 색채, 주관적 표현`, 
             en: `expressionism, emotional emphasis, exaggerated forms, intense colors, subjective expression, inner world, passionate visualization` 
