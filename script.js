@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 초기화 완료
 });
 
-// 한글 키워드를 영어로 번역하는 함수
+// 한글 키워드를 영어로 번역하는 함수 (확장 및 개선)
 function translateKeywordToEnglish(keyword) {
     const translations = {
         // 동물 관련
@@ -36,6 +36,11 @@ function translateKeywordToEnglish(keyword) {
         '호랑이': 'tiger',
         '판다': 'panda',
         '코끼리': 'elephant',
+        '펭귄': 'penguin',
+        '여우': 'fox',
+        '늑대': 'wolf',
+        '사슴': 'deer',
+        '말': 'horse',
         
         // 자연 관련
         '자연': 'nature',
@@ -50,6 +55,15 @@ function translateKeywordToEnglish(keyword) {
         '호수': 'lake',
         '해변': 'beach',
         '섬': 'island',
+        '폭포': 'waterfall',
+        '계곡': 'valley',
+        '들판': 'field',
+        '초원': 'meadow',
+        '정원': 'garden',
+        '잎': 'leaf',
+        '이끼': 'moss',
+        '암석': 'rock',
+        '모래': 'sand',
         
         // 계절 관련
         '봄': 'spring',
@@ -60,6 +74,9 @@ function translateKeywordToEnglish(keyword) {
         '단풍': 'autumn leaves',
         '눈': 'snow',
         '비': 'rain',
+        '안개': 'fog',
+        '이슬': 'dew',
+        '서리': 'frost',
         
         // 시간대
         '아침': 'morning',
@@ -68,6 +85,9 @@ function translateKeywordToEnglish(keyword) {
         '밤': 'night',
         '노을': 'sunset',
         '일출': 'sunrise',
+        '황혼': 'twilight',
+        '새벽': 'dawn',
+        '한밤중': 'midnight',
         
         // 도시/건축
         '도시': 'city',
@@ -75,6 +95,16 @@ function translateKeywordToEnglish(keyword) {
         '거리': 'street',
         '카페': 'cafe',
         '공원': 'park',
+        '사무실': 'office',
+        '집': 'home',
+        '방': 'room',
+        '창문': 'window',
+        '문': 'door',
+        '계단': 'stairs',
+        '다리': 'bridge',
+        '타워': 'tower',
+        '성': 'castle',
+        '교회': 'church',
         
         // 색상
         '빨강': 'red',
@@ -86,8 +116,13 @@ function translateKeywordToEnglish(keyword) {
         '검정': 'black',
         '하양': 'white',
         '회색': 'gray',
+        '금색': 'gold',
+        '은색': 'silver',
+        '갈색': 'brown',
+        '주황': 'orange',
+        '베이지': 'beige',
         
-        // 감성/분위기
+        // 감성/분위기/추상개념
         '감성': 'emotional',
         '힐링': 'healing',
         '평화': 'peace',
@@ -95,6 +130,31 @@ function translateKeywordToEnglish(keyword) {
         '사랑': 'love',
         '꿈': 'dream',
         '희망': 'hope',
+        '자유': 'freedom',
+        '고요': 'serenity',
+        '평온': 'tranquility',
+        '위로': 'comfort',
+        '따뜻함': 'warmth',
+        '차가움': 'coldness',
+        '외로움': 'loneliness',
+        '그리움': 'longing',
+        '추억': 'memory',
+        '향수': 'nostalgia',
+        '기쁨': 'joy',
+        '슬픔': 'sadness',
+        '분노': 'anger',
+        '두려움': 'fear',
+        '용기': 'courage',
+        '열정': 'passion',
+        '고독': 'solitude',
+        '명상': 'meditation',
+        '휴식': 'rest',
+        '여유': 'leisure',
+        '안정': 'stability',
+        '긴장': 'tension',
+        '흥분': 'excitement',
+        '설렘': 'flutter',
+        '낭만': 'romance',
         
         // 스타일
         '미니멀': 'minimal',
@@ -103,12 +163,20 @@ function translateKeywordToEnglish(keyword) {
         '모던': 'modern',
         '클래식': 'classic',
         '추상': 'abstract',
+        '화려함': 'gorgeous',
+        '심플': 'simple',
+        '우아함': 'elegant',
+        '세련됨': 'sophisticated',
+        '럭셔리': 'luxury',
+        '캐주얼': 'casual',
         
         // 아이폰/배경화면
         '아이폰': 'iPhone',
         '배경화면': 'wallpaper',
         '배경': 'background',
         '화면': 'screen',
+        '잠금화면': 'lock screen',
+        '홈화면': 'home screen',
         
         // 크리스마스
         '크리스마스': 'Christmas',
@@ -116,37 +184,191 @@ function translateKeywordToEnglish(keyword) {
         '선물': 'gift',
         '트리': 'tree',
         '눈사람': 'snowman',
+        '루돌프': 'Rudolph',
+        '장식': 'decoration',
+        '오너먼트': 'ornament',
+        '캐롤': 'carol',
+        '종': 'bell',
         
-        // 기타
+        // 음식/음료
         '음식': 'food',
         '디저트': 'dessert',
         '케이크': 'cake',
         '커피': 'coffee',
         '차': 'tea',
+        '빵': 'bread',
+        '과일': 'fruit',
+        '샐러드': 'salad',
+        '파스타': 'pasta',
+        '와인': 'wine',
+        '칵테일': 'cocktail',
+        '아이스크림': 'ice cream',
+        '초콜릿': 'chocolate',
+        '마카롱': 'macaron',
+        
+        // 문화/예술/취미
         '책': 'book',
         '음악': 'music',
         '오르골': 'music box',
         '여행': 'travel',
+        '그림': 'painting',
+        '사진': 'photography',
+        '영화': 'movie',
+        '공연': 'performance',
+        '전시': 'exhibition',
+        '박물관': 'museum',
+        '갤러리': 'gallery',
+        '악기': 'instrument',
+        '피아노': 'piano',
+        '기타': 'guitar',
+        '바이올린': 'violin',
+        '춤': 'dance',
+        '발레': 'ballet',
+        '요가': 'yoga',
+        '명화': 'masterpiece',
+        
+        // 우주/천체
         '우주': 'space',
         '별': 'star',
         '달': 'moon',
-        '태양': 'sun'
+        '태양': 'sun',
+        '은하': 'galaxy',
+        '행성': 'planet',
+        '유성': 'meteor',
+        '별자리': 'constellation',
+        '오로라': 'aurora',
+        
+        // 사물/오브제
+        '꽃병': 'vase',
+        '양초': 'candle',
+        '램프': 'lamp',
+        '시계': 'clock',
+        '거울': 'mirror',
+        '액자': 'frame',
+        '쿠션': 'cushion',
+        '담요': 'blanket',
+        '우산': 'umbrella',
+        '모자': 'hat',
+        '신발': 'shoes',
+        '가방': 'bag',
+        '안경': 'glasses',
+        '향수': 'perfume',
+        '립스틱': 'lipstick',
+        '보석': 'jewelry',
+        '반지': 'ring',
+        '목걸이': 'necklace',
+        '귀걸이': 'earring',
+        
+        // 사무/업무
+        '사무용품': 'office supplies',
+        '펜': 'pen',
+        '노트': 'notebook',
+        '연필': 'pencil',
+        '지우개': 'eraser',
+        '자': 'ruler',
+        '클립': 'clip',
+        '스테이플러': 'stapler',
+        '파일': 'file',
+        '폴더': 'folder',
+        '책상': 'desk',
+        '의자': 'chair',
+        '컴퓨터': 'computer',
+        '키보드': 'keyboard',
+        '마우스': 'mouse',
+        '모니터': 'monitor',
+        '노트북': 'laptop',
+        
+        // 질감/재질
+        '부드러움': 'soft',
+        '거칠음': 'rough',
+        '매끄러움': 'smooth',
+        '투명': 'transparent',
+        '반짝임': 'sparkle',
+        '광택': 'gloss',
+        '무광': 'matte',
+        '나무': 'wood',
+        '금속': 'metal',
+        '유리': 'glass',
+        '천': 'fabric',
+        '가죽': 'leather',
+        '종이': 'paper',
+        '돌': 'stone',
+        '대리석': 'marble',
+        
+        // 패턴/무늬
+        '줄무늬': 'stripe',
+        '물방울': 'polka dot',
+        '체크': 'check',
+        '꽃무늬': 'floral pattern',
+        '기하학': 'geometric',
+        '추상무늬': 'abstract pattern'
     };
     
-    // 정확히 일치하는 번역이 있으면 사용
-    if (translations[keyword]) {
-        return translations[keyword];
+    // 키워드 정제 (공백 제거 및 소문자 변환)
+    const cleanKeyword = keyword.trim().toLowerCase();
+    
+    // 1단계: 정확히 일치하는 번역이 있으면 사용
+    if (translations[cleanKeyword]) {
+        return translations[cleanKeyword];
     }
     
-    // 부분 일치 검색 (키워드에 포함된 단어 찾기)
+    // 2단계: 복합 키워드 분석 (여러 단어 조합)
+    const words = cleanKeyword.split(/\s+/);
+    if (words.length > 1) {
+        const translatedWords = words.map(word => {
+            return translations[word] || word;
+        });
+        return translatedWords.join(' ');
+    }
+    
+    // 3단계: 부분 일치 검색 (키워드에 포함된 단어 찾기)
     for (const [kor, eng] of Object.entries(translations)) {
-        if (keyword.includes(kor)) {
+        if (cleanKeyword.includes(kor)) {
             return eng;
         }
     }
     
-    // 번역이 없으면 원본 키워드 반환
+    // 4단계: 번역이 없으면 원본 키워드 반환
     return keyword;
+}
+
+// 키워드 의미 분석 함수 (키워드의 특성과 맥락 파악)
+function analyzeKeywordContext(keyword) {
+    const contexts = {
+        nature: ['자연', '숲', '바다', '산', '하늘', '나무', '꽃', '풀', '강', '호수', '해변', '섬', '폭포', '계곡', '들판', '초원', '정원'],
+        animal: ['동물', '강아지', '고양이', '새', '물고기', '토끼', '곰', '사자', '호랑이', '판다', '펭귄', '여우', '사슴'],
+        season: ['봄', '여름', '가을', '겨울', '벚꽃', '단풍', '눈', '비', '안개'],
+        time: ['아침', '낮', '저녁', '밤', '노을', '일출', '황혼', '새벽', '한밤중'],
+        emotion: ['감성', '힐링', '평화', '행복', '사랑', '꿈', '희망', '자유', '고요', '평온', '위로', '따뜻함', '외로움', '그리움', '추억', '향수', '휴식', '여유', '명상'],
+        urban: ['도시', '건물', '거리', '카페', '사무실', '타워', '다리'],
+        art: ['그림', '사진', '음악', '오르골', '영화', '공연', '전시', '박물관', '갤러리', '명화', '악기', '피아노'],
+        space: ['우주', '별', '달', '태양', '은하', '행성', '별자리', '오로라'],
+        office: ['사무용품', '펜', '노트', '연필', '책상', '의자', '컴퓨터', '키보드', '노트북'],
+        food: ['음식', '디저트', '케이크', '커피', '차', '빵', '과일', '초콜릿', '마카롱'],
+        christmas: ['크리스마스', '산타', '선물', '트리', '눈사람', '루돌프', '장식', '오너먼트']
+    };
+    
+    const cleanKeyword = keyword.trim().toLowerCase();
+    const detectedContexts = [];
+    
+    for (const [contextType, keywords] of Object.entries(contexts)) {
+        for (const kw of keywords) {
+            if (cleanKeyword.includes(kw)) {
+                detectedContexts.push(contextType);
+                break;
+            }
+        }
+    }
+    
+    return {
+        contexts: detectedContexts,
+        isNature: detectedContexts.includes('nature'),
+        isEmotion: detectedContexts.includes('emotion'),
+        isUrban: detectedContexts.includes('urban'),
+        isArt: detectedContexts.includes('art'),
+        isSeasonal: detectedContexts.includes('season'),
+        isChristmas: detectedContexts.includes('christmas')
+    };
 }
 
 // 폼 제출 처리
@@ -168,10 +390,11 @@ blogForm.addEventListener('submit', (e) => {
 });
 
 // 복사 버튼
-copyBtn.addEventListener('click', () => {
+copyBtn.addEventListener('click', async () => {
     const content = generatedContent.innerText;
     
-    navigator.clipboard.writeText(content).then(() => {
+    try {
+        await navigator.clipboard.writeText(content);
         const originalText = copyBtn.textContent;
         copyBtn.textContent = '복사 완료!';
         copyBtn.style.background = '#28a745';
@@ -180,9 +403,10 @@ copyBtn.addEventListener('click', () => {
             copyBtn.textContent = originalText;
             copyBtn.style.background = '';
         }, 2000);
-    }).catch(err => {
+    } catch (err) {
+        console.error('복사 실패:', err);
         alert('복사에 실패했습니다. 수동으로 복사해주세요.');
-    });
+    }
 });
 
 // Word 파일 다운로드 버튼
@@ -215,32 +439,79 @@ function generateSEOContent(keyword, count) {
     };
 }
 
-// 블로그 제목 생성
+// 블로그 제목 생성 (SEO 최적화 & 고품질)
 function generateBlogTitle(keyword) {
+    const context = analyzeKeywordContext(keyword);
+    
+    // 기본 템플릿 (25개로 확장)
     const templates = [
-        `아이폰17배경화면 4K 고화질 ${keyword} 감성 가득 BEST 12`,
-        `아이폰17배경화면 4K 고화질 ${keyword}로 힐링하세요`,
-        `아이폰17배경화면 4K 고화질 ${keyword} 트렌디한 감성 모음`,
-        `아이폰17배경화면 4K 고화질 ${keyword} 요즘 대세 스타일`,
-        `아이폰17배경화면 4K 고화질 ${keyword} 감성 충전 필수템`,
-        `아이폰17배경화면 4K 고화질 ${keyword}로 매일이 특별해져요`,
-        `아이폰17배경화면 4K 고화질 ${keyword} 무드 가득 추천`,
-        `아이폰17배경화면 4K 고화질 ${keyword} 핫한 스타일 총정리`,
-        `아이폰17배경화면 4K 고화질 ${keyword} 감성 폭발 컬렉션`,
-        `아이폰17배경화면 4K 고화질 ${keyword}로 폰꾸 완성`
+        `${keyword} 아이폰17배경화면 4K 고화질 | 2025 최신 트렌드 감성 BEST 12`,
+        `${keyword} 감성 폭발! 아이폰17배경화면 4K 고화질로 매일이 특별해지는 순간`,
+        `아이폰17배경화면 4K 고화질 ${keyword} 컬렉션 | 프리미엄 디자인 엄선 12선`,
+        `${keyword}로 완성하는 아이폰17배경화면 4K 고화질 | 힐링부터 트렌디까지`,
+        `2025 아이폰17배경화면 4K 고화질 ${keyword} 특집 | 전문가 큐레이션 추천`,
+        `${keyword} 무드 가득한 아이폰17배경화면 4K 고화질 | 감성 충전 필수템`,
+        `아이폰17배경화면 4K 고화질 ${keyword} 완벽 가이드 | 스타일별 맞춤 추천`,
+        `${keyword}의 모든 것! 아이폰17배경화면 4K 고화질 울트라 컬렉션`,
+        `아이폰17배경화면 4K 고화질 ${keyword} 핫템 총정리 | 요즘 대세 스타일`,
+        `${keyword}로 시작하는 아이폰17배경화면 4K 고화질 | 폰꾸의 정석 12가지`,
+        `아이폰17배경화면 4K 고화질 ${keyword} 프리미엄 에디션 | 감도 높은 선택`,
+        `${keyword} 테마 아이폰17배경화면 4K 고화질 | 트렌드세터를 위한 컬렉션`,
+        `2025 최신 ${keyword} 아이폰17배경화면 4K 고화질 | 한눈에 보는 BEST`,
+        `${keyword}의 미학! 아이폰17배경화면 4K 고화질 감성 큐레이션`,
+        `아이폰17배경화면 4K 고화질 ${keyword} 스페셜 | 취향저격 디자인 모음`,
+        `${keyword} 아이폰17배경화면 4K UHD | 프로급 비주얼 12종 완벽 정리`,
+        `아이폰17배경화면 ${keyword} 4K 고화질 | 디자이너가 선택한 TOP 12`,
+        `${keyword} 분위기 100% 살린 아이폰17배경화면 4K | 매일 바꿔 쓰는 재미`,
+        `2025 트렌디 ${keyword} 아이폰17배경화면 4K 고화질 | 인싸템 총정리`,
+        `아이폰17배경화면 4K 고화질 ${keyword} 마스터 컬렉션 | 프리미엄 큐레이션`,
+        `${keyword} 감성 100배! 아이폰17배경화면 4K 고화질 베스트 12`,
+        `아이폰17 ${keyword} 배경화면 4K UHD | 레티나 최적화 프리미엄 에디션`,
+        `${keyword} 아이폰17배경화면 4K 초고화질 | 매일 새로운 감성 12가지`,
+        `2025 필수템 ${keyword} 아이폰17배경화면 4K | 센스있는 선택 가이드`,
+        `아이폰17배경화면 ${keyword} 4K 고화질 | 완벽주의자를 위한 12선`
     ];
+    
+    // 맥락별 특화 제목 추가
+    if (context.isEmotion) {
+        templates.push(
+            `${keyword} 치유의 순간, 아이폰17배경화면 4K 고화질 | 힐링 감성 BEST`,
+            `마음이 편안해지는 ${keyword} 아이폰17배경화면 4K | 위로와 공감의 비주얼`
+        );
+    }
+    
+    if (context.isNature) {
+        templates.push(
+            `자연이 주는 ${keyword} 아이폰17배경화면 4K 고화질 | 생생한 자연미`,
+            `${keyword} 자연의 아름다움 아이폰17배경화면 4K | 힐링 풍경 컬렉션`
+        );
+    }
+    
+    if (context.isArt) {
+        templates.push(
+            `예술적 ${keyword} 아이폰17배경화면 4K 고화질 | 갤러리급 비주얼`,
+            `${keyword} 예술 작품 같은 아이폰17배경화면 4K | 감각적 디자인`
+        );
+    }
     
     return templates[Math.floor(Math.random() * templates.length)];
 }
 
-// 메타 설명 생성
+// 메타 설명 생성 (SEO 최적화 & 고품질 확장)
 function generateMetaDescription(keyword) {
+    const context = analyzeKeywordContext(keyword);
+    const englishKeyword = translateKeywordToEnglish(keyword);
+    
     const templates = [
-        `${keyword}을 찾고 계신가요? 2025년 최신 트렌드를 반영한 ${keyword} 완벽 가이드를 소개합니다. 트렌디하고 감성적인 디자인부터 미니멀하고 세련된 스타일까지, 다양한 취향과 스타일에 맞는 최고의 ${keyword}을 엄선했습니다. 각 디자인마다 고화질 4K 이미지로 제작되었으며, 감성적인 설명과 함께 상세하게 소개합니다. 각 테마별로 엄선된 고품질 이미지와 세심하게 작성된 설명을 통해 당신에게 꼭 맞는 스타일을 찾아보세요. 제공되는 해시태그를 활용하면 SNS 공유도 쉽게 할 수 있습니다. 지금 바로 당신의 취향에 맞는 특별한 ${keyword}을 만나보세요. 전문가가 큐레이션한 컬렉션으로 누구나 쉽게 마음에 드는 디자인을 선택할 수 있습니다.`,
+        `${keyword} 아이폰17배경화면 4K 고화질을 찾고 계신가요? 2025년 최신 트렌드를 완벽하게 반영한 프리미엄 ${keyword} 컬렉션을 소개합니다. 전문 디자이너와 큐레이터가 엄선한 12가지 스타일은 트렌디한 감성 디자인부터 미니멀하고 세련된 모던 스타일, 빈티지 레트로 감성까지 다양한 취향을 모두 아우릅니다. 각 디자인은 4K UHD 초고화질로 제작되어 아이폰17의 레티나 디스플레이에서 완벽하게 구현되며, 전문가의 시선으로 작성된 감성적인 설명과 함께 각 이미지의 콘셉트, 색감, 구도, 분위기를 상세하게 소개합니다. ${keyword}의 본질을 완벽하게 담아낸 고품질 비주얼과 함께 한글·영문 이미지 생성 프롬프트, SNS 최적화 해시태그까지 제공하여 누구나 쉽게 활용할 수 있습니다. 당신의 개성과 취향을 완벽하게 표현할 특별한 ${keyword} 배경화면을 지금 바로 만나보세요.`,
         
-        `${keyword} 추천 BEST 컬렉션을 한눈에 만나보세요! 자연의 아름다움부터 도시의 감성, 빈티지 레트로 스타일까지 모든 분위기를 아우르는 ${keyword}을 총정리했습니다. 각 이미지는 4K 초고화질로 제작되어 레티나 디스플레이에서도 선명하고 생생하게 감상할 수 있습니다. 모든 디자인에는 감성적이고 세심한 설명이 함께 제공되며, 각 테마가 가진 독특한 매력과 분위기를 상세히 소개합니다. 전문 디자이너가 엄선한 색감과 구도, 분위기까지 완벽하게 고려된 컬렉션으로 당신의 일상에 특별함을 더해보세요. 고품질 이미지와 풍부한 설명으로 구성된 이 가이드는 선택의 즐거움을 선사합니다.`,
+        `${keyword} 아이폰17배경화면 추천 BEST 컬렉션을 한눈에 확인하세요! 자연의 숨결이 느껴지는 풍경부터 도시의 세련된 감성, 따뜻한 감성 힐링, 빈티지 레트로 무드, 현대적 미니멀리즘까지 모든 분위기와 스타일을 완벽하게 아우르는 프리미엄 ${keyword} 이미지 12종을 총정리했습니다. 각 이미지는 4K 초고화질(3840x2160)로 제작되어 아이폰17 Pro Max의 Super Retina XDR 디스플레이에서도 선명하고 생생하게 감상할 수 있으며, 색재현율과 명암비가 완벽하게 최적화되어 있습니다. 모든 디자인에는 이미지의 감성과 스토리를 담은 전문적인 해설이 함께 제공되며, 각 테마가 가진 독특한 매력, 색채 심리, 구도의 의미를 상세하게 분석합니다. 전문 포토그래퍼와 디자이너가 직접 선정한 색감, 구도, 라이팅, 분위기까지 세심하게 고려된 이 컬렉션은 당신의 일상에 예술적 영감과 특별함을 더해줍니다.`,
         
-        `2025년 가장 핫한 ${keyword} 트렌드를 지금 바로 확인하세요! 이번 컬렉션에서는 계절감 넘치는 디자인부터 시간을 초월한 클래식 스타일, 그리고 최신 트렌드를 반영한 모던한 감성까지 모두 담았습니다. 각각의 ${keyword}은 전문가의 손길을 거쳐 세심하게 기획되었으며, 고화질 4K, ultra HD 품질로 제작되어 어떤 디스플레이에서도 완벽한 화질을 자랑합니다. 단순히 이미지만 제공하는 것이 아니라, 각 디자인의 콘셉트와 감성을 담은 상세한 설명으로 이미지에 담긴 스토리를 전달합니다. 각 테마별로 엄선된 비주얼과 함께 세심한 해설이 더해져 완벽한 가이드를 제공합니다. 블로그, 인스타그램 등 다양한 SNS에서 활용할 수 있는 해시태그도 함께 제공되니 놓치지 마세요.`
+        `2025년 가장 핫한 ${keyword} 아이폰17배경화면 트렌드를 지금 바로 만나보세요! 이번 프리미엄 컬렉션은 계절의 아름다움을 담은 시즌별 디자인, 시간을 초월한 타임리스 클래식 스타일, MZ세대가 열광하는 최신 트렌드 감성, 갤러리급 예술 작품 스타일까지 12가지 다채로운 테마로 구성되어 있습니다. 각각의 ${keyword} 이미지는 비주얼 전문가와 트렌드 큐레이터의 손길을 거쳐 세심하게 기획·제작되었으며, 4K Ultra HD 품질(3840x2160 픽셀)로 제작되어 어떤 디스플레이 환경에서도 완벽한 화질과 색감을 자랑합니다. 단순히 고화질 이미지만 나열하는 것이 아니라, 각 디자인의 창작 의도, 감성 포인트, 활용 팁을 담은 전문적인 설명과 함께 이미지에 숨겨진 스토리와 의미를 깊이있게 전달합니다. AI 이미지 생성을 위한 한글·영문 프롬프트, 인스타그램·블로그 최적화 해시태그, 다운로드 가이드까지 완벽하게 제공됩니다.`,
+        
+        `${keyword} 감성을 완벽하게 구현한 아이폰17배경화면 4K 고화질 마스터 에디션입니다. 감성 디자인 전문가가 ${keyword}의 본질과 아름다움을 철저히 분석하여 12가지 독창적인 비주얼 콘셉트로 재탄생시켰습니다. 자연광 활용 기법, 색채 심리학 이론, 황금 비율 구도, 시각적 균형감을 완벽하게 적용한 이 컬렉션은 단순한 배경화면을 넘어 하나의 예술 작품으로 승화되었습니다. 각 이미지는 4K UHD 해상도로 제작되어 픽셀 하나하나까지 선명하며, HDR(High Dynamic Range) 기술을 적용하여 밝은 영역과 어두운 영역의 디테일이 모두 살아있습니다. 전문 사진작가의 시선으로 분석한 상세한 이미지 해설은 빛의 방향, 색온도, 채도, 명도, 구도의 의미까지 깊이있게 다루며, ${keyword}가 주는 감성적 울림을 극대화하는 방법을 안내합니다. Midjourney, DALL-E, Stable Diffusion 등 AI 생성 도구를 위한 최적화된 프롬프트와 함께 제공되어 누구나 쉽게 나만의 ${keyword} 이미지를 재창작할 수 있습니다.`,
+        
+        `프리미엄 ${keyword} 아이폰17배경화면 4K 컬렉션 | 전문가 큐레이션 특별판. ${keyword}의 다채로운 면모를 12가지 예술적 관점으로 해석한 이 컬렉션은 감성적 표현주의, 자연주의 사실화, 도시적 미니멀리즘, 빈티지 아날로그 감성, 초현실적 드림스케이프, 추상 표현 기법 등 다양한 예술 사조와 스타일을 ${keyword}에 적용하여 독창적인 비주얼을 완성했습니다. 각 작품은 4K 초고화질(가로 2160px, 세로 3840px)의 아이폰17 최적화 세로 비율로 제작되었으며, P3 Wide Color Gamut을 완벽 지원하여 1,000,000:1 명암비의 OLED 디스플레이에서 생생한 색재현이 가능합니다. 이미지마다 제공되는 전문적인 해설은 구도 분석, 색채 이론, 빛의 활용, 감정 전달 기법, 시각적 스토리텔링을 다루며, 왜 이 이미지가 ${keyword}를 완벽하게 표현하는지 논리적으로 설명합니다. 블로거, 인플루언서, 크리에이터를 위한 고품질 콘텐츠로 저작권 걱정 없이 자유롭게 활용 가능하며, SEO 최적화된 해시태그 세트와 소셜미디어 공유 가이드까지 함께 제공됩니다.`
     ];
     
     return templates[Math.floor(Math.random() * templates.length)];
@@ -309,96 +580,102 @@ function generateThemesByKeyword(keyword) {
     // 기본 테마 (다른 키워드들)
     return [
         { 
-            title: `부드러운 조명과 따뜻한 색조의 감성적 표현`, 
-            desc: `${keyword}를 따뜻하고 서정적인 감성으로 표현한 작품입니다. 부드러운 색감과 은은한 빛이 어우러져 마음을 편안하게 만들고, 감정을 자극하는 섬세한 디테일이 돋보입니다. 일상 속 소소한 행복과 위로를 시각적으로 담아내며, 보는 이의 마음에 따뜻한 온기를 전합니다.`, 
-            ko: `${keyword}, 감성적 표현, emotional photography, 부드러운 조명, 따뜻한 색조, 서정적 분위기, 감정적 깊이`, 
-            en: `emotional expression, soft lighting, warm color tone, lyrical atmosphere, sentimental mood, heartfelt composition, touching visual` 
+            title: `${keyword} 속 황금빛 자연광과 따뜻한 세피아 톤의 감성적 순간`, 
+            desc: `${keyword}를 따뜻하고 서정적인 감성으로 표현한 작품입니다. 창문을 통해 스며드는 부드러운 자연광이 ${keyword}를 감싸며, 은은한 황금빛 그라데이션이 화면 전체에 따뜻한 온기를 불어넣습니다. 빛과 그림자의 섬세한 대비가 깊이감을 만들어내고, 부드러운 포커스 처리로 몽환적인 분위기를 연출합니다. 세피아와 베이지 톤의 색상 팔레트가 편안함을 주며, 빛의 방향과 강도를 조절해 감정적 깊이를 극대화합니다. 일상 속 소소한 행복과 위로를 시각적으로 담아내며, 보는 이의 마음에 따뜻한 온기를 전하는 힐링 이미지입니다. 감성적인 색감 조합과 부드러운 빛의 흐름이 하루의 피로를 녹여주는 치유의 작품으로, 평온한 오후의 햇살 같은 포근함을 선사합니다.`, 
+            ko: `${keyword}, 감성적 표현, emotional photography, 자연광, 황금빛 그라데이션, 따뜻한 세피아 톤, 부드러운 포커스, 빛과 그림자 대비, 베이지 컬러 팔레트, 서정적 분위기, 포근한 온기`, 
+            en: `${keyword}, emotional expression, soft natural lighting, golden gradient, warm sepia tone, gentle focus, light and shadow contrast, beige color palette, lyrical atmosphere, cozy warmth, healing visual, afternoon sunlight mood` 
         },
         { 
-            title: `필름 그레인과 바랜 색감의 레트로 스타일`, 
-            desc: `${keyword}를 레트로하고 향수 어린 빈티지 스타일로 재해석했습니다. 세월의 흔적이 느껴지는 색감과 필름 카메라 특유의 그레인 효과가 과거로의 여행을 떠나게 합니다. 아날로그 시대의 따뜻함과 낭만이 가득한 작품으로, 시간을 거슬러 올라간 듯한 특별한 감동을 선사합니다.`, 
-            ko: `${keyword}, 빈티지 스타일, retro aesthetic, 필름 그레인, 바랜 색감, 아날로그 감성, 노스탤지어`, 
-            en: `vintage style, retro aesthetic, film grain, faded colors, analog feel, nostalgic atmosphere, timeworn beauty` 
+            title: `${keyword}의 35mm 필름 그레인과 바랜 컬러의 1980s 레트로 무드`, 
+            desc: `${keyword}를 1980년대 아날로그 감성으로 재해석한 빈티지 스타일 작품입니다. 35mm 필름 카메라로 촬영한 듯한 자연스러운 그레인 효과가 전체를 감싸며, 시간이 지나며 자연스럽게 바랜 듯한 컬러 톤이 향수를 자극합니다. 채도를 낮춘 파스텔 톤과 약간의 색 번짐 효과로 필름 특유의 아날로그 느낌을 살렸으며, 비네팅 효과가 가장자리를 부드럽게 처리해 빈티지 감성을 강화합니다. 오래된 사진첩에서 꺼낸 듯한 세피아와 앰버 톤이 레트로 분위기를 완성하고, 약간의 노이즈와 불완전함이 오히려 진정성과 따뜻함을 더합니다. 80년대 감성 영화의 한 장면처럼 시간을 거슬러 올라가는 특별한 추억을 소환하며, 아날로그 시대의 순수함과 낭만을 완벽하게 담아낸 작품입니다.`, 
+            ko: `${keyword}, 빈티지 스타일, 35mm 필름 그레인, 바랜 컬러, 1980s 레트로, 아날로그 감성, 낮은 채도, 비네팅 효과, 세피아 앰버 톤, 노이즈 텍스처, 필름 색 번짐`, 
+            en: `${keyword}, vintage style, 35mm film grain, faded colors, 1980s retro, analog aesthetic, low saturation, vignette effect, sepia amber tone, noise texture, film color bleeding, nostalgic mood, timeworn photography` 
         },
         { 
-            title: `여백의 미와 절제된 색상의 미니멀 구성`, 
-            desc: `${keyword}를 극도로 절제된 미니멀리즘으로 표현했습니다. 불필요한 요소를 모두 제거하고 본질만 남겨, 강렬하면서도 깔끔한 인상을 만들어냅니다. 여백의 미와 단순한 구성이 현대적이고 세련된 감각을 자아내며, 시각적 휴식을 선사합니다.`, 
-            ko: `${keyword}, 미니멀리즘, minimalist design, 여백의 미, 절제된 색상, 깔끔한 구성, 단순미`, 
-            en: `minimalism, clean composition, negative space, restrained palette, simple beauty, modern aesthetic, uncluttered design` 
+            title: `${keyword}의 기하학적 여백과 모노크롬 톤의 극단적 미니멀리즘`, 
+            desc: `${keyword}를 극도로 절제된 미니멀리즘 철학으로 표현한 작품입니다. 불필요한 모든 요소를 제거하고 본질만 남겨 강렬한 시각적 임팩트를 만들어냅니다. 정교한 대칭 구조와 기하학적 라인이 안정감과 질서를 부여하며, 텅 빈 여백이 오히려 주제를 더욱 강조합니다. 흰색, 회색, 검정의 모노크롬 팔레트나 단일 색상으로 통일된 컬러 스킴이 시각적 휴식을 제공하고, 간결한 형태와 깔끔한 라인이 현대적 세련미를 극대화합니다. 네거티브 스페이스를 적극 활용해 공간의 숨결을 느끼게 하며, 단순함 속에 숨겨진 강력한 메시지를 전달합니다. Less is more의 디자인 철학을 완벽하게 구현한 이 작품은 복잡한 세상에서 본질에 집중하게 만드는 명상적 경험을 선사합니다.`, 
+            ko: `${keyword}, 극단적 미니멀리즘, 기하학적 구조, 대칭 배치, 모노크롬 팔레트, 여백의 미학, 네거티브 스페이스, 단일 색상, 간결한 라인, 정제된 형태, 현대적 절제미`, 
+            en: `${keyword}, extreme minimalism, geometric structure, symmetrical layout, monochrome palette, negative space aesthetics, single color scheme, clean lines, refined form, contemporary restraint, meditative simplicity, less is more` 
         },
         { 
-            title: `실험적 구성과 파격적 디자인의 전위 예술`, 
-            desc: `${keyword}를 실험적이고 전위적인 아방가르드 기법으로 표현한 파격적인 작품입니다. 기존의 틀을 깨는 대담한 시도와 예상치 못한 조합이 충격과 감동을 동시에 선사합니다. 예술적 혁신과 창의성이 빛나는 독창적인 비주얼로, 새로운 시각적 경험을 제공합니다.`, 
-            ko: `${keyword}, 아방가르드, avant-garde, 실험적 구성, 전위적 표현, 파격적 디자인, 혁신적 스타일`, 
-            en: `avant-garde, experimental composition, radical expression, innovative design, cutting-edge visual, artistic revolution, bold creativity` 
+            title: `${keyword}로 창조한 비정형 구도와 강렬한 대비의 아방가르드 실험`, 
+            desc: `${keyword}를 전위적이고 파격적인 아방가르드 기법으로 해체하고 재구성한 혁명적 작품입니다. 전통적인 구도를 완전히 파괴하고 예상치 못한 각도와 비정형적 프레이밍으로 새로운 시각 언어를 창조합니다. 강렬한 명암 대비와 충돌하는 색상 조합이 시각적 긴장감을 극대화하며, 왜곡되고 과장된 형태가 기존 미의 기준에 도전합니다. 다중 노출, 이중 이미지, 추상적 레이어링 기법으로 복합적인 시각 경험을 제공하고, 예기치 않은 요소의 배치가 관람자의 인식을 자극합니다. 네온 컬러와 하이 콘트라스트가 만들어내는 강렬한 비주얼은 전통과 혁신의 경계를 허물며, 예술적 자유와 창의적 반항 정신을 완벽하게 구현합니다. 관습을 거부하는 대담한 실험 정신이 빛나는 전위 예술의 정수입니다.`, 
+            ko: `${keyword}, 아방가르드 실험, 비정형 구도, 파격적 앵글, 강렬한 명암 대비, 충돌하는 색상, 왜곡된 형태, 다중 노출, 추상적 레이어링, 네온 컬러, 하이 콘트라스트, 전위적 표현`, 
+            en: `${keyword}, avant-garde experimentation, unconventional composition, radical angle, intense chiaroscuro, clashing colors, distorted forms, multiple exposure, abstract layering, neon colors, high contrast, revolutionary visual, artistic rebellion` 
         },
         { 
-            title: `환상적 구성과 꿈같은 분위기의 초현실 세계`, 
-            desc: `${keyword}를 꿈과 현실의 경계를 넘나드는 초현실적 방식으로 표현했습니다. 환상적이고 비현실적인 장면 구성이 상상력을 자극하며, 일상에서는 볼 수 없는 신비로운 세계로 안내합니다. 무의식의 세계를 시각화한 몽환적이고 예술적인 작품입니다.`, 
-            ko: `${keyword}, 초현실주의, surrealism, 환상적 구성, 꿈같은 분위기, 비현실적 장면, 신비로운 느낌`, 
-            en: `surrealism, dreamlike composition, fantastic atmosphere, surreal scene, mystical feeling, subconscious visualization, otherworldly beauty` 
+            title: `${keyword}가 펼치는 부유하는 오브제와 녹아내리는 시간의 초현실 세계`, 
+            desc: `${keyword}를 달리와 마그리트의 작품처럼 초현실적으로 재해석한 몽환적 드림스케이프입니다. 물리 법칙을 거스르며 공중에 떠있는 오브제들과 중력을 무시하는 구성이 비현실적 세계를 창조합니다. 녹아내리는 시계, 거꾸로 흐르는 물, 불가능한 기하학 같은 초현실적 요소들이 꿈과 현실의 경계를 흐리게 만듭니다. 안개처럼 부드럽게 번지는 색채와 왜곡된 원근감이 몽환적 분위기를 극대화하며, 무의식의 세계를 시각화합니다. 비논리적이지만 아름다운 장면 구성으로 상상력을 자극하고, 예측 불가능한 색채 조합과 형태의 변형이 신비로운 감각을 선사합니다. 현실에서는 절대 볼 수 없는 초현실적 풍경이 마치 꿈속을 헤매는 듯한 특별한 경험을 제공하는 작품입니다.`, 
+            ko: `${keyword}, 초현실주의 드림스케이프, 부유하는 오브제, 녹아내리는 시간, 왜곡된 원근감, 중력 무시, 불가능한 기하학, 안개 같은 번짐, 꿈과 현실 경계, 무의식 시각화, 비논리적 아름다움`, 
+            en: `${keyword}, surrealist dreamscape, floating objects, melting time, distorted perspective, gravity-defying, impossible geometry, misty blur, dream-reality boundary, subconscious visualization, illogical beauty, Dalí-inspired, Magritte atmosphere` 
         },
         { 
-            title: `자유로운 붓질과 역동적 색채의 추상 표현`, 
-            desc: `${keyword}를 순수한 색과 형태의 추상 표현으로 재해석했습니다. 구체적인 형상을 넘어 감정과 에너지를 직관적으로 전달하며, 자유로운 붓 터치와 역동적인 색채가 강렬한 인상을 남깁니다. 보는 이마다 다르게 해석할 수 있는 예술적 깊이가 있는 작품입니다.`, 
-            ko: `${keyword}, 추상 표현주의, abstract expressionism, 자유로운 붓질, 역동적 색채, 감정 표현, 직관적 구성`, 
-            en: `abstract expressionism, free brushwork, dynamic colors, emotional expression, intuitive composition, pure abstraction, gestural painting` 
+            title: `${keyword}의 순수한 색과 형태로 전달하는 직관적 추상 감정의 폭발`, 
+            desc: `${keyword}를 순수한 색과 형태의 추상 표현으로 재해석했습니다. 구체적인 형상을 넘어 감정과 에너지를 직관적으로 전달하며, 자유로운 붓 터치와 역동적인 색채가 강렬한 인상을 남깁니다. 물감이 캔버스 위에서 자유롭게 움직이는 듯한 제스처 페인팅 기법으로 감정의 순수성을 표현하며, 규칙 없는 색채의 충돌과 조화가 내면의 에너지를 발산합니다. 보는 이마다 다르게 해석할 수 있는 예술적 깊이가 있으며, 형태의 구속에서 벗어난 자유로운 표현이 감정적 카타르시스를 제공합니다. 추상 표현주의의 정수를 담은 강렬하고 감각적인 작품입니다.`, 
+            ko: `${keyword}, 추상 표현주의, abstract expressionism, 자유로운 붓질, 역동적 색채, 감정 표현, 직관적 구성, 제스처 페인팅, 순수 추상`, 
+            en: `abstract expressionism, free brushwork, dynamic colors, emotional expression, intuitive composition, pure abstraction, gestural painting, spontaneous creation` 
         },
         { 
-            title: `강렬한 원색과 반복 패턴의 대중적 아이콘`, 
-            desc: `${keyword}를 대중문화의 아이콘으로 재탄생시킨 팝아트 스타일입니다. 강렬한 원색과 대담한 그래픽, 그리고 반복적인 패턴이 현대적이고 트렌디한 느낌을 줍니다. 유쾌하고 경쾌한 분위기로 일상에 활력을 더하는 작품입니다.`, 
-            ko: `${keyword}, 팝아트, pop art style, 강렬한 원색, 그래픽 디자인, 대중적 아이콘, 반복 패턴`, 
-            en: `pop art style, bold primary colors, graphic design, mass culture icon, repetitive pattern, vibrant aesthetic, contemporary art` 
+            title: `${keyword}를 재해석한 대중문화 아이콘의 강렬한 팝아트 비주얼`, 
+            desc: `${keyword}를 대중문화의 아이콘으로 재탄생시킨 팝아트 스타일입니다. 강렬한 원색과 대담한 그래픽, 그리고 반복적인 패턴이 현대적이고 트렌디한 느낌을 줍니다. 앤디 워홀과 로이 리히텐슈타인의 작품에서 영감을 받은 대중적이면서도 예술적인 표현으로, 일상의 평범함을 특별한 예술로 승화시킵니다. 만화적 표현과 하프톤 도트 패턴이 더해져 팝아트 특유의 경쾌함을 강조하며, 유쾌하고 발랄한 분위기로 일상에 활력을 더합니다. 대중적 접근성과 예술성을 동시에 갖춘 현대적 감각의 작품입니다.`, 
+            ko: `${keyword}, 팝아트, pop art style, 강렬한 원색, 그래픽 디자인, 대중적 아이콘, 반복 패턴, 하프톤 도트, 만화적 표현`, 
+            en: `pop art style, bold primary colors, graphic design, mass culture icon, repetitive pattern, vibrant aesthetic, contemporary art, halftone dots, comic style` 
         },
         { 
-            title: `빛의 표현과 부드러운 붓터치의 순간 포착`, 
-            desc: `${keyword}를 빛과 색채의 순간적 인상을 포착한 인상주의 기법으로 표현했습니다. 부드럽게 번지는 색감과 자연스러운 붓 터치가 시간의 흐름과 빛의 변화를 섬세하게 담아냅니다. 자연스럽고 서정적인 분위기가 감성을 자극하는 작품입니다.`, 
-            ko: `${keyword}, 인상주의, impressionism, 빛의 표현, 부드러운 붓터치, 자연스러운 색감, 순간 포착`, 
-            en: `impressionism, light expression, soft brushstrokes, natural color palette, moment captured, atmospheric effect, painterly quality` 
+            title: `${keyword} 속 찰나의 빛과 색채를 담은 부드러운 인상주의 터치`, 
+            desc: `${keyword}를 빛과 색채의 순간적 인상을 포착한 인상주의 기법으로 표현했습니다. 부드럽게 번지는 색감과 자연스러운 붓 터치가 시간의 흐름과 빛의 변화를 섬세하게 담아냅니다. 모네, 르누아르의 작품처럼 야외에서 포착한 자연광의 미묘한 변화와 대기의 떨림을 표현하며, 빛의 순간적 인상을 색채로 구현합니다. 윤곽선을 흐리게 처리한 부드러운 터치와 보색 대비를 활용한 색채 분할 기법이 생동감을 더하고, 자연스럽고 서정적인 분위기가 감성을 자극합니다. 빛과 색채의 순수한 아름다움을 담은 인상주의 명작입니다.`, 
+            ko: `${keyword}, 인상주의, impressionism, 빛의 표현, 부드러운 붓터치, 자연스러운 색감, 순간 포착, 대기의 표현, 색채 분할`, 
+            en: `impressionism, light expression, soft brushstrokes, natural color palette, moment captured, atmospheric effect, painterly quality, color division, plein air` 
         },
         { 
-            title: `초사실적 디테일과 완벽한 질감의 극사실 표현`, 
-            desc: `${keyword}를 사진보다 더 사실적으로 표현한 하이퍼리얼리즘 작품입니다. 극도로 정밀한 디테일과 완벽한 질감 표현이 실재보다 더 실재 같은 느낌을 줍니다. 모든 요소가 생생하게 살아있는 듯한 초사실적 비주얼로 감탄을 자아냅니다.`, 
-            ko: `${keyword}, 하이퍼리얼리즘, hyperrealism, 초사실적 표현, 극사실 디테일, 완벽한 질감, 사진적 정밀도`, 
-            en: `hyperrealism, ultra-realistic expression, extreme detail, perfect texture, photographic precision, lifelike quality, meticulous rendering` 
+            title: `${keyword}의 사진을 초월한 극사실 디테일과 완벽한 하이퍼리얼리즘`, 
+            desc: `${keyword}를 사진보다 더 사실적으로 표현한 하이퍼리얼리즘 작품입니다. 극도로 정밀한 디테일과 완벽한 질감 표현이 실재보다 더 실재 같은 느낌을 줍니다. 미세한 질감 하나하나까지 섬세하게 묘사하고, 빛의 반사와 그림자의 미묘한 변화를 완벽하게 재현합니다. 모든 요소가 생생하게 살아있는 듯한 초사실적 비주얼로 감탄을 자아내며, 육안으로 보는 것보다 더 선명하고 디테일한 표현이 현실을 넘어서는 새로운 차원의 사실성을 보여줍니다. 완벽함을 추구하는 기술력과 예술성이 결합된 최고의 사실주의 작품입니다.`, 
+            ko: `${keyword}, 하이퍼리얼리즘, hyperrealism, 초사실적 표현, 극사실 디테일, 완벽한 질감, 사진적 정밀도, 미세 묘사, 완벽한 재현`, 
+            en: `hyperrealism, ultra-realistic expression, extreme detail, perfect texture, photographic precision, lifelike quality, meticulous rendering, flawless reproduction` 
         },
         { 
-            title: `드라마틱한 조명과 풍부한 색채의 서사적 구성`, 
-            desc: `${keyword}를 감정과 상상력을 극대화한 낭만주의 스타일로 표현했습니다. 드라마틱한 빛과 그림자, 풍부한 색채가 감동적인 장면을 연출하며, 자연의 숭고함과 인간의 감정을 극적으로 담아냅니다. 서사적이고 감성적인 분위기가 마음을 울립니다.`, 
-            ko: `${keyword}, 낭만주의, romanticism, 드라마틱한 조명, 감정 극대화, 풍부한 색채, 서사적 구성`, 
-            en: `romanticism, dramatic lighting, emotional intensity, rich colors, epic composition, sublime nature, passionate expression` 
+            title: `${keyword}로 그려낸 드라마틱한 빛과 풍부한 색채의 낭만주의 서사`, 
+            desc: `${keyword}를 감정과 상상력을 극대화한 낭만주의 스타일로 표현했습니다. 드라마틱한 빛과 그림자, 풍부한 색채가 감동적인 장면을 연출하며, 자연의 숭고함과 인간의 감정을 극적으로 담아냅니다. 강렬한 대조의 명암법(키아로스쿠로)으로 극적인 분위기를 만들어내고, 역동적인 구도와 웅장한 스케일이 서사적 감동을 전달합니다. 서사적이고 감성적인 분위기가 마음을 울리며, 자연의 압도적인 힘과 아름다움 앞에서 느끼는 경외감을 시각화합니다. 낭만주의의 정신을 담은 감정적으로 충만한 작품입니다.`, 
+            ko: `${keyword}, 낭만주의, romanticism, 드라마틱한 조명, 감정 극대화, 풍부한 색채, 서사적 구성, 키아로스쿠로, 웅장한 스케일`, 
+            en: `romanticism, dramatic lighting, emotional intensity, rich colors, epic composition, sublime nature, passionate expression, chiaroscuro, grand scale` 
         },
         { 
-            title: `다시점 구성과 기하학적 분해의 입체적 재구성`, 
-            desc: `${keyword}를 다양한 시점에서 본 모습을 한 화면에 담은 입체파 스타일입니다. 기하학적 형태의 분해와 재구성이 새로운 시각적 경험을 선사하며, 평면 속에 입체감과 다차원적 깊이를 부여합니다. 혁신적이고 지적인 예술적 접근이 돋보이는 작품입니다.`, 
-            ko: `${keyword}, 입체파, cubism, 다시점 구성, 기하학적 분해, 재구성, 다차원적 표현`, 
-            en: `cubism, multiple viewpoints, geometric deconstruction, reconstruction, multidimensional expression, analytical composition, fragmented forms` 
+            title: `${keyword}를 해체한 다차원적 시점의 기하학적 입체파 재구성`, 
+            desc: `${keyword}를 다양한 시점에서 본 모습을 한 화면에 담은 입체파 스타일입니다. 기하학적 형태의 분해와 재구성이 새로운 시각적 경험을 선사하며, 평면 속에 입체감과 다차원적 깊이를 부여합니다. 피카소와 브라크가 창시한 큐비즘 기법으로 하나의 대상을 여러 각도에서 동시에 표현하며, 시간과 공간의 개념을 해체합니다. 기하학적 면 분할과 다각적 시점의 융합이 지적이고 분석적인 미감을 만들어내며, 혁신적이고 지적인 예술적 접근이 돋보이는 작품입니다. 20세기 미술 혁명의 정수를 담은 입체파의 걸작입니다.`, 
+            ko: `${keyword}, 입체파, cubism, 다시점 구성, 기하학적 분해, 재구성, 다차원적 표현, 면 분할, 큐비즘`, 
+            en: `cubism, multiple viewpoints, geometric deconstruction, reconstruction, multidimensional expression, analytical composition, fragmented forms, faceted planes` 
         },
         { 
-            title: `과장된 형태와 격렬한 색채의 주관적 감정 표현`, 
-            desc: `${keyword}를 주관적 감정과 내면의 세계를 강렬하게 표현한 표현주의 작품입니다. 과장되고 왜곡된 형태, 격렬한 색채가 내면의 감정을 직접적으로 전달하며, 객관적 재현보다 주관적 감정에 집중합니다. 감정의 순수성이 극대화된 강렬한 비주얼입니다.`, 
-            ko: `${keyword}, 표현주의, expressionism, 감정 강조, 과장된 형태, 격렬한 색채, 주관적 표현`, 
-            en: `expressionism, emotional emphasis, exaggerated forms, intense colors, subjective expression, inner world, passionate visualization` 
+            title: `${keyword}에 담긴 뭉크의 절규처럼 내면을 뒤흔드는 표현주의 감정 폭발`, 
+            desc: `${keyword}를 에드바르 뭉크의 절규처럼 내면의 불안과 고뇌를 극단적으로 표출한 표현주의 작품입니다. 객관적 재현을 거부하고 주관적 감정을 왜곡되고 과장된 형태로 표현하며, 뒤틀린 선과 격렬한 색채가 심리적 긴장을 극대화합니다. 에곤 실레의 불안한 신체 표현과 에른스트 루트비히 키르히너의 날카로운 각진 형태가 불편한 진실을 직시하게 만들고, 바실리 칸딘스키의 감정적 색채 이론이 내면의 혼란을 시각화합니다. 비명을 지르는 듯한 강렬한 붓 터치와 충돌하는 보색 대비가 감정의 소용돌이를 생생히 전달하며, 인간 실존의 고독과 불안, 열망을 날것 그대로 드러냅니다. 아름다움보다 진실을, 조화보다 감정을 우선하는 표현주의의 본질을 완벽하게 구현한 충격적이고 강렬한 작품입니다.`, 
+            ko: `${keyword}, 표현주의, 에드바르 뭉크, 에곤 실레, 키르히너, 칸딘스키, 왜곡된 형태, 과장된 색채, 심리적 긴장, 내면의 감정, 불안과 고뇌, 주관적 표현`, 
+            en: `${keyword}, expressionism, Edvard Munch scream, Egon Schiele anxiety, Kirchner angularity, Kandinsky color emotion, distorted forms, exaggerated colors, psychological tension, inner turmoil, existential angst, subjective expression, emotional intensity` 
         }
     ];
 }
 
-// 해시태그 생성
+// 해시태그 생성 (고품질 & SEO 최적화)
 function generateHashtags(keyword, title) {
+    const context = analyzeKeywordContext(keyword);
+    
+    // 기본 필수 해시태그
     const baseHashtags = [
         keyword,
-        '배경화면',
+        '아이폰17배경화면',
         '아이폰배경화면',
+        '4K고화질',
+        '배경화면',
         '감성배경화면',
         '고화질배경화면',
-        '휴대폰배경화면',
+        '휴대폰배경화면'
+    ];
+    
+    // 일반 추가 해시태그
+    const generalHashtags = [
         '배경화면추천',
         '예쁜배경화면',
         '무료배경화면',
-        '배경화면다운'
-    ];
-    
-    const additionalHashtags = [
+        '배경화면다운',
         '폰꾸',
         '폰꾸미기',
         '잠금화면',
@@ -409,19 +686,146 @@ function generateHashtags(keyword, title) {
         '인스타감성',
         '배경이미지',
         '디자인',
-        '미니멀',
-        '심플',
-        '세련된',
-        '모던',
-        '힐링'
+        '아이폰17ProMax',
+        '레티나디스플레이',
+        '초고화질',
+        'UHD배경화면',
+        '세로배경화면',
+        '감성충전',
+        '힐링배경화면',
+        '트렌드',
+        '2025배경화면',
+        '프리미엄배경화면',
+        '감도높은선택'
     ];
     
-    // 랜덤하게 추가 해시태그 선택
-    const selectedAdditional = additionalHashtags
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 5);
+    // 맥락별 특화 해시태그
+    let contextHashtags = [];
     
-    return [...baseHashtags, ...selectedAdditional];
+    if (context.isNature) {
+        contextHashtags = [
+            '자연배경화면',
+            '자연감성',
+            '힐링사진',
+            '자연풍경',
+            '감성풍경',
+            '자연스러운',
+            '힐링이미지'
+        ];
+    }
+    
+    if (context.isEmotion) {
+        contextHashtags = [
+            '감성',
+            '힐링',
+            '위로',
+            '감성충전',
+            '마음치유',
+            '힐링타임',
+            '감성사진',
+            '위로받는순간',
+            '힐링감성'
+        ];
+    }
+    
+    if (context.isUrban) {
+        contextHashtags = [
+            '도시감성',
+            '도시야경',
+            '도시풍경',
+            '어반감성',
+            '시티뷰',
+            '도시사진',
+            '모던감성'
+        ];
+    }
+    
+    if (context.isArt) {
+        contextHashtags = [
+            '예술적감성',
+            '아트워크',
+            '감각적',
+            '예술사진',
+            '갤러리감성',
+            '작품사진',
+            '예술배경화면'
+        ];
+    }
+    
+    if (context.isSeasonal) {
+        contextHashtags = [
+            '계절감성',
+            '시즌배경화면',
+            '계절풍경',
+            '계절사진'
+        ];
+    }
+    
+    if (context.isChristmas) {
+        contextHashtags = [
+            '크리스마스',
+            '크리스마스감성',
+            '겨울감성',
+            '연말감성',
+            '홀리데이',
+            '겨울배경화면',
+            '크리스마스배경화면'
+        ];
+    }
+    
+    // 스타일 관련 해시태그 (제목 분석)
+    const styleHashtags = [];
+    const lowerTitle = title.toLowerCase();
+    
+    if (lowerTitle.includes('미니멀') || lowerTitle.includes('minimal')) {
+        styleHashtags.push('미니멀리즘', '미니멀', '심플', '깔끔한');
+    }
+    if (lowerTitle.includes('빈티지') || lowerTitle.includes('vintage')) {
+        styleHashtags.push('빈티지', '레트로', '빈티지감성', '아날로그');
+    }
+    if (lowerTitle.includes('아방가르드') || lowerTitle.includes('avant')) {
+        styleHashtags.push('아방가르드', '전위적', '실험적', '독창적');
+    }
+    if (lowerTitle.includes('초현실') || lowerTitle.includes('surreal')) {
+        styleHashtags.push('초현실주의', '몽환적', '환상적', '드림스케이프');
+    }
+    if (lowerTitle.includes('추상') || lowerTitle.includes('abstract')) {
+        styleHashtags.push('추상표현주의', '추상미술', '추상적');
+    }
+    if (lowerTitle.includes('팝아트') || lowerTitle.includes('pop')) {
+        styleHashtags.push('팝아트', '화려한', '컬러풀', '트렌디');
+    }
+    if (lowerTitle.includes('인상주의') || lowerTitle.includes('impression')) {
+        styleHashtags.push('인상주의', '인상파', '빛의예술', '서정적');
+    }
+    if (lowerTitle.includes('하이퍼') || lowerTitle.includes('hyper')) {
+        styleHashtags.push('하이퍼리얼리즘', '초사실', '극사실', '리얼리즘');
+    }
+    if (lowerTitle.includes('낭만') || lowerTitle.includes('romantic')) {
+        styleHashtags.push('낭만주의', '낭만적', '로맨틱', '감성적');
+    }
+    if (lowerTitle.includes('입체파') || lowerTitle.includes('cubism')) {
+        styleHashtags.push('입체파', '큐비즘', '기하학적', '분석적');
+    }
+    if (lowerTitle.includes('표현주의') || lowerTitle.includes('expression')) {
+        styleHashtags.push('표현주의', '감정적', '강렬한', '열정적');
+    }
+    
+    // 모든 해시태그 통합 (중복 제거)
+    const allHashtags = [
+        ...baseHashtags,
+        ...generalHashtags,
+        ...contextHashtags,
+        ...styleHashtags
+    ];
+    
+    // 중복 제거 및 랜덤 선택 (20-25개)
+    const uniqueHashtags = [...new Set(allHashtags)];
+    const shuffled = uniqueHashtags.sort(() => 0.5 - Math.random());
+    const selectedHashtags = shuffled.slice(0, Math.min(25, shuffled.length));
+    
+    // # 기호 추가
+    return selectedHashtags.map(tag => `#${tag}`).join(' ');
 }
 
 // 마무리 글 생성
@@ -459,7 +863,7 @@ function showGeneratedContent(content) {
             
             <div class="hashtags-section">
                 <strong>해시태그:</strong><br>
-                ${item.hashtags.map(tag => `#${tag}`).join(' ')}
+                ${item.hashtags}
             </div>
             
             <div class="prompt-section">
@@ -505,8 +909,9 @@ function showGeneratedContent(content) {
 }
 
 // 개별 프롬프트 복사 함수
-function copyPromptToClipboard(text, button) {
-    navigator.clipboard.writeText(text).then(() => {
+async function copyPromptToClipboard(text, button) {
+    try {
+        await navigator.clipboard.writeText(text);
         const originalText = button.textContent;
         button.textContent = '복사완료!';
         button.style.background = '#28a745';
@@ -515,9 +920,10 @@ function copyPromptToClipboard(text, button) {
             button.textContent = originalText;
             button.style.background = '';
         }, 1500);
-    }).catch(err => {
+    } catch (err) {
+        console.error('프롬프트 복사 실패:', err);
         alert('복사에 실패했습니다.');
-    });
+    }
 }
 
 // 폼 초기화 시 미리보기도 숨김
@@ -527,7 +933,7 @@ blogForm.addEventListener('reset', () => {
     currentContent = null;
 });
 
-// Word 파일 다운로드 함수
+// Word 파일 다운로드 함수 (프리미엄 스타일)
 function downloadAsWord(content, keyword) {
     // HTML 문서 생성
     let htmlContent = `
@@ -536,102 +942,277 @@ function downloadAsWord(content, keyword) {
 <head>
     <meta charset="UTF-8">
     <style>
+        @page {
+            size: A4;
+            margin: 2.5cm;
+        }
+        
         body { 
-            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif; 
+            font-family: 'Malgun Gothic', '맑은 고딕', Arial, sans-serif; 
             line-height: 1.8; 
             max-width: 800px; 
             margin: 0 auto; 
             padding: 40px 20px;
-            color: #333;
+            color: #2d3748;
+            background-color: #ffffff;
         }
-        .blog-title { 
-            font-size: 24pt; 
-            color: #1a1a1a; 
-            font-weight: bold; 
-            margin-bottom: 30px; 
+        
+        .document-header {
             text-align: center;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 15px;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px double #667eea;
         }
-        .meta-description { 
-            margin-bottom: 40px; 
-            color: #555; 
+        
+        .blog-title { 
+            font-size: 28pt; 
+            color: #1a202c; 
+            font-weight: bold; 
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+            line-height: 1.4;
+        }
+        
+        .subtitle {
             font-size: 11pt;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-left: 4px solid #667eea;
-            line-height: 1.9;
+            color: #718096;
+            margin-bottom: 20px;
         }
-        .item-section { 
+        
+        .meta-description { 
             margin-bottom: 50px; 
-            page-break-inside: avoid;
+            color: #4a5568; 
+            font-size: 11pt;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 25px 30px;
+            border-left: 5px solid #667eea;
+            border-radius: 0 8px 8px 0;
+            line-height: 2;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
+        
+        .items-container {
+            margin-top: 40px;
+        }
+        
+        .item-section { 
+            margin-bottom: 60px; 
+            page-break-inside: avoid;
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .item-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 14pt;
+            font-weight: bold;
+            padding: 8px 18px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+        
         .item-title {
-            font-size: 16pt;
+            font-size: 17pt;
             color: #2d3748;
             font-weight: bold;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            border-bottom: 3px solid #edf2f7;
+            padding-bottom: 12px;
         }
+        
+        .section-label {
+            display: inline-block;
+            font-size: 9pt;
+            color: #667eea;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            padding: 4px 12px;
+            background-color: #edf2f7;
+            border-radius: 4px;
+        }
+        
         .description { 
-            margin-bottom: 20px; 
+            margin-bottom: 25px; 
             color: #4a5568; 
-            line-height: 1.9;
-            font-size: 10.5pt;
+            line-height: 2;
+            font-size: 11pt;
             text-align: justify;
+            padding: 15px;
+            background-color: #f7fafc;
+            border-radius: 8px;
+            border-left: 3px solid #cbd5e0;
         }
+        
+        .prompt-container {
+            margin-top: 25px;
+            background-color: #fafafa;
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .prompt-section {
+            margin-bottom: 20px;
+        }
+        
+        .prompt-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .prompt-label {
+            display: block;
+            font-size: 10pt;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 8px;
+            padding: 5px 12px;
+            background-color: #edf2f7;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        .prompt-text {
+            font-size: 10pt;
+            color: #2d3748;
+            line-height: 1.8;
+            padding: 12px 15px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        
+        .korean-prompt {
+            background-color: #f0fff4;
+            border-left: 3px solid #48bb78;
+        }
+        
+        .english-prompt {
+            background-color: #ebf8ff;
+            border-left: 3px solid #4299e1;
+        }
+        
         .hashtags { 
             color: #667eea; 
             margin: 20px 0; 
-            line-height: 2;
+            line-height: 2.2;
             font-size: 10pt;
-            font-weight: 500;
-        }
-        .hashtag {
-            background-color: #edf2f7;
-            padding: 4px 8px;
-            border-radius: 4px;
-            margin-right: 5px;
-        }
-        .closing { 
-            margin-top: 50px; 
-            color: #4a5568; 
-            line-height: 2;
-            font-size: 10.5pt;
+            padding: 15px;
             background-color: #f7fafc;
-            padding: 25px;
             border-radius: 8px;
-            border: 1px solid #e2e8f0;
+            border: 1px dashed #cbd5e0;
         }
+        
+        .hashtag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            margin: 3px 4px;
+            font-size: 9pt;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(102, 126, 234, 0.2);
+        }
+        
+        .closing { 
+            margin-top: 60px; 
+            color: #4a5568; 
+            line-height: 2.2;
+            font-size: 11pt;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 35px 40px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
         .section-divider {
-            border-top: 1px dashed #cbd5e0;
-            margin: 30px 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #cbd5e0, transparent);
+            margin: 40px 0;
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            color: #a0aec0;
+            font-size: 9pt;
         }
     </style>
 </head>
 <body>
-    <div class="blog-title">${content.blogTitle}</div>
+    <div class="document-header">
+        <div class="blog-title">${content.blogTitle}</div>
+        <div class="subtitle">아이폰17 배경화면 4K 고화질 프리미엄 컬렉션</div>
+    </div>
+    
+    <div class="section-label">📝 소개</div>
     <div class="meta-description">${content.metaDescription}</div>
+    
     <div class="section-divider"></div>
+    
+    <div class="items-container">
 `;
 
-    // 각 항목 추가
+    // 각 항목 추가 (개선된 스타일)
     content.items.forEach(item => {
-        const hashtagsHtml = item.hashtags.map(tag => `<span class="hashtag">#${tag}</span>`).join(' ');
         htmlContent += `
     <div class="item-section">
-        <div class="item-title">${item.number}. ${item.title}</div>
+        <div class="item-number">No. ${item.number}</div>
+        <div class="item-title">${item.title}</div>
+        
+        <div class="section-label">💬 설명</div>
         <div class="description">${item.description}</div>
-        <div class="hashtags">${hashtagsHtml}</div>
+        
+        <div class="section-label">🏷️ 해시태그</div>
+        <div class="hashtags">${item.hashtags.split(' ').map(tag => `<span class="hashtag">${tag}</span>`).join(' ')}</div>
+        
+        <div class="prompt-container">
+            <div class="prompt-section">
+                <span class="prompt-label">🇰🇷 한글 이미지 생성 프롬프트</span>
+                <div class="prompt-text korean-prompt">${item.koreanPrompt}</div>
+            </div>
+            
+            <div class="prompt-section">
+                <span class="prompt-label">🇺🇸 English Image Generation Prompt</span>
+                <div class="prompt-text english-prompt">${item.englishPrompt}</div>
+            </div>
+        </div>
     </div>
-    <div class="section-divider"></div>
+    
+    ${item.number < content.items.length ? '<div class="section-divider"></div>' : ''}
 `;
     });
 
     // 마무리 글 추가
     htmlContent += `
-    <div class="closing">${content.closingText.replace(/\n/g, '<br><br>')}</div>
+    </div>
+    
+    <div class="section-divider"></div>
+    
+    <div class="section-label">✨ 마무리</div>
+    <div class="closing">${content.closingText.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>')}</div>
+    
+    <div class="footer">
+        생성일: ${new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })} | 
+        키워드: ${keyword} | 
+        총 ${content.items.length}개 항목
+    </div>
 </body>
 </html>
 `;
@@ -644,7 +1225,7 @@ function downloadAsWord(content, keyword) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${keyword}_SEO콘텐츠_${new Date().toISOString().split('T')[0]}.doc`;
+    link.download = `${keyword}_아이폰17배경화면_4K_프리미엄컬렉션_${new Date().toISOString().split('T')[0]}.doc`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -652,7 +1233,7 @@ function downloadAsWord(content, keyword) {
     
     // 성공 메시지
     const originalText = downloadWordBtn.textContent;
-    downloadWordBtn.textContent = '다운로드 완료!';
+    downloadWordBtn.textContent = '✅ 다운로드 완료!';
     downloadWordBtn.style.background = '#28a745';
     
     setTimeout(() => {
