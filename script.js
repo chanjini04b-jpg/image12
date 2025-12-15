@@ -1110,7 +1110,6 @@ function downloadAsWord(content, keyword) {
         <div class="subtitle">아이폰17 배경화면 4K 고화질 프리미엄 컬렉션</div>
     </div>
     
-    <div class="section-label">📝 소개</div>
     <div class="meta-description">${content.metaDescription}</div>
     
     <div class="section-divider"></div>
@@ -1125,10 +1124,8 @@ function downloadAsWord(content, keyword) {
         <div class="item-number">No. ${item.number}</div>
         <div class="item-title">${item.title}</div>
         
-        <div class="section-label">💬 설명</div>
         <div class="description">${item.description}</div>
         
-        <div class="section-label">🏷️ 해시태그</div>
         <div class="hashtags">${item.hashtags.split(' ').map(tag => `<span class="hashtag">${tag}</span>`).join(' ')}</div>
     </div>
     
@@ -1142,7 +1139,6 @@ function downloadAsWord(content, keyword) {
     
     <div class="section-divider"></div>
     
-    <div class="section-label">✨ 마무리</div>
     <div class="closing">${content.closingText.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>')}</div>
     
     <div class="footer">
