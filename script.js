@@ -1053,60 +1053,9 @@ function downloadAsWord(content, keyword) {
             border-left: 3px solid #cbd5e0;
         }
         
-        .prompt-container {
-            margin-top: 25px;
-            background-color: #fafafa;
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .prompt-section {
-            margin-bottom: 20px;
-        }
-        
-        .prompt-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .prompt-label {
-            display: block;
-            font-size: 10pt;
-            color: #667eea;
-            font-weight: bold;
-            margin-bottom: 8px;
-            padding: 5px 12px;
-            background-color: #edf2f7;
-            border-radius: 4px;
-            display: inline-block;
-        }
-        
-        .prompt-text {
-            font-size: 10pt;
-            color: #2d3748;
-            line-height: 1.8;
-            padding: 12px 15px;
-            background-color: #ffffff;
-            border: 1px solid #cbd5e0;
-            border-radius: 6px;
-            font-family: 'Consolas', 'Monaco', monospace;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-        
-        .korean-prompt {
-            background-color: #f0fff4;
-            border-left: 3px solid #48bb78;
-        }
-        
-        .english-prompt {
-            background-color: #ebf8ff;
-            border-left: 3px solid #4299e1;
-        }
-        
         .hashtags { 
             color: #667eea; 
-            margin: 20px 0; 
+            margin: 20px 0 0 0; 
             line-height: 2.2;
             font-size: 10pt;
             padding: 15px;
@@ -1169,7 +1118,7 @@ function downloadAsWord(content, keyword) {
     <div class="items-container">
 `;
 
-    // 각 항목 추가 (개선된 스타일)
+    // 각 항목 추가 (프롬프트 제외)
     content.items.forEach(item => {
         htmlContent += `
     <div class="item-section">
@@ -1181,18 +1130,6 @@ function downloadAsWord(content, keyword) {
         
         <div class="section-label">🏷️ 해시태그</div>
         <div class="hashtags">${item.hashtags.split(' ').map(tag => `<span class="hashtag">${tag}</span>`).join(' ')}</div>
-        
-        <div class="prompt-container">
-            <div class="prompt-section">
-                <span class="prompt-label">🇰🇷 한글 이미지 생성 프롬프트</span>
-                <div class="prompt-text korean-prompt">${item.koreanPrompt}</div>
-            </div>
-            
-            <div class="prompt-section">
-                <span class="prompt-label">🇺🇸 English Image Generation Prompt</span>
-                <div class="prompt-text english-prompt">${item.englishPrompt}</div>
-            </div>
-        </div>
     </div>
     
     ${item.number < content.items.length ? '<div class="section-divider"></div>' : ''}
